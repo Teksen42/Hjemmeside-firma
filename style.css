@@ -1,0 +1,121 @@
+/* Generel styling til hele siden */
+body {
+    font-family: Arial, sans-serif; /* Vælger en ren og letlæselig skrifttype */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* En lys grå baggrundsfarve */
+    color: #333; /* Mørkegrå tekstfarve for god læsbarhed */
+}
+
+/* Styling af headeren */
+header {
+    background-color: #333; /* Mørk baggrund til headeren */
+    color: #fff; /* Hvid tekstfarve */
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Styling af navigationsmenuen */
+nav ul {
+    padding: 0;
+    list-style: none; /* Fjerner prikkerne fra listen */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; /* Viser menupunkter ved siden af hinanden */
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none; /* Fjerner understregning fra links */
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Tilføjer understregning ved hover for feedback */
+}
+
+/* Hovedindhold og sektioner */
+main {
+    max-width: 960px; /* Sætter en maksimal bredde for indholdet */
+    margin: 20px auto; /* Centrerer indholdet på siden */
+    padding: 0 20px;
+}
+
+section {
+    background-color: #fff; /* Hvid baggrund for sektioner */
+    margin-bottom: 20px; /* Mellemrum mellem sektionerne */
+    padding: 20px;
+    border-radius: 5px; /* Giver sektionerne let afrundede hjørner */
+}
+
+/* Styling af "call-to-action" knappen */
+#hero a {
+    display: inline-block;
+    background-color: #007BFF; /* Blå farve til knappen */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#hero a:hover {
+    background-color: #0056b3; /* Mørkere blå ved hover */
+}
+
+
+/* Styling af footeren */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+footer a {
+    color: #007BFF; /* Gør email-linket blåt for synlighed */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Sørger for at label er på sin egen linje */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Får felterne til at fylde hele containerens bredde */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Sørger for at padding ikke ødelægger bredden */
+}
+
+form button {
+    display: inline-block;
+    background-color: #28a745; /* Grøn farve for "Send" */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Viser en hånd, når man holder musen over */
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #218838; /* Lidt mørkere grøn ved hover */
+}
