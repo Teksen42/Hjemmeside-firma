@@ -3,66 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It Webløsninger - Professionelle Hjemmesider og Webudvikling</title> 
-    <meta name="description" content="It Webløsninger tilbyder professionel webudvikling, moderne hjemmesider, e-handel og SEO-optimering. Få et skræddersyet og uforpligtende tilbud på din næste webløsning.">
-    <link rel="manifest" href="/site.webmanifest"> 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+    <title>It Webløsninger - Professionelle Hjemmesider og Webudvikling</title>
+    <meta name="description" content="It Webløsninger skaber skræddersyede, resultatorienterede hjemmesider. Få en professionel webløsning, der styrker din digitale tilstedeværelse.">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
 
     <header>
-        <a href="index.html" aria-label="It Webløsninger - Gå til forside">
-            <img src="logo.png" alt="It Webløsninger logo" width="200" height="50"> </a>
+        <a href="index.html" aria-label="It Webløsninger - Gå til forside" class="logo">
+            <img src="logo.png" alt="It Webløsninger logo" width="200" height="50">
+        </a>
         <nav aria-label="Hovednavigation">
             <ul>
-                <li><a href="index.html" target="_blank" aria-current="page">Forside</a></li> <li><a href="ydelser.html" target="_blank">Ydelser</a></li>
-                <li><a href="cases.html" target="_blank">Cases</a></li>
-                <li><a href="om-os.html" target="_blank">Om os</a></li>
-                <li><a href="kontakt.html" target="_blank">Kontakt</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
+                <li><a href="ydelser.html">Ydelser</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="om-os.html">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt os</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>Professionelle hjemmesider, der skaber resultater for din virksomhed</h1> <p>Vi er specialister i at designe, udvikle og optimere skræddersyede webløsninger, der passer præcis til dine behov og hjælper dig med at nå dine forretningsmål.</p>
-            <a href="/kontakt.html" class="button primary-button">Få et uforpligtende tilbud</a> </section>
+            <div class="hero-content">
+                <h1>Din Partner i Digital Vækst</h1>
+                <p>Vi bygger ikke bare hjemmesider – vi skaber digitale oplevelser, der konverterer besøgende til kunder. Lad os hjælpe dig med at realisere dit fulde online potentiale.</p>
+                <a href="/kontakt.html" class="button primary-button">Start Dit Projekt i Dag</a>
+            </div>
+        </section>
 
         <section id="services">
-            <h2>Vores Ydelser</h2>
-            <p>Vi tilbyder et bredt spektrum af digitale løsninger, der kan styrke din online tilstedeværelse:</p>
-            <div class="service-grid"> <article class="service-item">
+            <h2>Vores Ekspertise</h2>
+            <p class="section-intro">Vi tilbyder et komplet udvalg af digitale ydelser, der sikrer din virksomhed succes online.</p>
+            <div class="service-grid">
+                <article class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
                     <h3>Webdesign & Udvikling</h3>
-                    <p>Moderne og responsive hjemmesider, der ser fantastiske ud på alle enheder og er nemme at navigere.</p>
+                    <p>Vi skaber unikke og brugervenlige hjemmesider, der er optimeret til alle enheder og designet til at imponere dine kunder.</p>
                     <a href="ydelser.html#webdesign" class="button">Læs mere</a>
                 </article>
                 <article class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Søgemaskineoptimering (SEO)</h3>
-                    <p>Få mere synlighed og højere placeringer i Google, så potentielle kunder nemt kan finde dig.</p>
+                    <p>Bliv fundet af dine kunder. Vi forbedrer din synlighed på Google med målrettet SEO, der skaber organisk trafik og vækst.</p>
                     <a href="ydelser.html#seo" class="button">Læs mere</a>
                 </article>
                 <article class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                     <h3>E-handel & Webshops</h3>
-                    <p>Kraftfulde og sikre webshops, der gør det nemt for dine kunder at handle online.</p>
+                    <p>Drømmer du om at sælge online? Vi bygger sikre og skalerbare webshops, der gør det let at administrere produkter og øge dit salg.</p>
                     <a href="ydelser.html#ehandel" class="button">Læs mere</a>
                 </article>
-                </div>
-            <a href="ydelser.html" class="button secondary-button">Se alle vores ydelser</a>
+            </div>
+            <a href="ydelser.html" class="button secondary-button">Se Alle Ydelser</a>
         </section>
-
-        </main>
+    </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; <span id="current-year"></span> It Webløsninger. Alle rettigheder forbeholdes.</p> <address>
-                <p>CVR: **Indsæt dit CVR-nummer her**</p> 
+            <p>© <span id="current-year"></span> It Webløsninger. Alle rettigheder forbeholdes.</p>
+            <address>
+                <p>CVR: **Indsæt dit CVR-nummer her**</p>
                 <p>Email: <a href="mailto:yasirteksen@hotmail.com">yasirteksen@hotmail.com</a></p>
-                </address>
+            </address>
             <div class="social-media">
-                <a href="#" aria-label="It Webløsninger på LinkedIn"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-                <a href="#" aria-label="It Webløsninger på Facebook"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com" aria-label="It Webløsninger på Facebook"><img src="photo/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com" aria-label="It Webløsninger på LinkedIn"><img src="photo/linkedin-icon.png" alt="LinkedIn"></a>
             </div>
         </div>
         <nav class="footer-nav">
@@ -73,7 +90,6 @@
         </nav>
     </footer>
 
-    <script src="script.js"></script> 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
