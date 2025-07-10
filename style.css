@@ -1,121 +1,412 @@
-/* Generel styling til hele siden */
-body {
-    font-family: Arial, sans-serif; /* Vælger en ren og letlæselig skrifttype */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* En lys grå baggrundsfarve */
-    color: #333; /* Mørkegrå tekstfarve for god læsbarhed */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* --- Generelle Styles --- */
+:root {
+    --primary-color: #007bff; /* En frisk blå til accent */
+    --secondary-color: #6c757d; /* En afdæmpet grå */
+    --dark-color: #212529; /* Mørk tekst og baggrund for kontrast */
+    --light-color: #f8f9fa; /* Lys baggrund */
+    --white-color: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --gradient-bg: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling af headeren */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden; /* Forhindrer horisontal scroll fra animationer */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Lidt mørkere blå ved hover */
+    transform: translateY(-2px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* --- Header & Navigation --- */
 header {
-    background-color: #333; /* Mørk baggrund til headeren */
-    color: #fff; /* Hvid tekstfarve */
-    padding: 1rem 0;
-    text-align: center;
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%; /* Juster padding for at give luft */
 }
 
 header h1 {
+    font-size: 2.5rem;
     margin: 0;
+    color: var(--white-color);
+    letter-spacing: 1px;
 }
 
-/* Styling af navigationsmenuen */
+header h1 a {
+    color: var(--white-color);
+    font-family: var(--font-heading);
+    transition: color 0.3s ease;
+}
+
+header h1 a:hover {
+    color: var(--primary-color);
+}
+
 nav ul {
-    padding: 0;
-    list-style: none; /* Fjerner prikkerne fra listen */
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Sektion --- */
+#hero {
+    background: var(--gradient-bg);
+    color: var(--white-color);
     text-align: center;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Sørg for at den fylder en god del af viewporten */
+    position: relative;
+    overflow: hidden; /* For at indeholde de animerede elementer */
 }
 
-nav ul li {
-    display: inline; /* Viser menupunkter ved siden af hinanden */
-    margin: 0 15px;
+#hero::before { /* Subtil overlay for dybde */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none; /* Fjerner understregning fra links */
-    font-size: 18px;
+#hero * {
+    position: relative;
+    z-index: 2;
 }
 
-nav a:hover {
-    text-decoration: underline; /* Tilføjer understregning ved hover for feedback */
+#hero h2 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    line-height: 1.2;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out forwards;
 }
 
-/* Hovedindhold og sektioner */
-main {
-    max-width: 960px; /* Sætter en maksimal bredde for indholdet */
-    margin: 20px auto; /* Centrerer indholdet på siden */
-    padding: 0 20px;
+#hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
-section {
-    background-color: #fff; /* Hvid baggrund for sektioner */
-    margin-bottom: 20px; /* Mellemrum mellem sektionerne */
-    padding: 20px;
-    border-radius: 5px; /* Giver sektionerne let afrundede hjørner */
-}
-
-/* Styling af "call-to-action" knappen */
 #hero a {
     display: inline-block;
-    background-color: #007BFF; /* Blå farve til knappen */
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-medium);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInScale 1s ease-out forwards;
+    animation-delay: 0.6s;
 }
 
 #hero a:hover {
-    background-color: #0056b3; /* Mørkere blå ved hover */
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Sektioner Generelt --- */
+section {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: var(--white-color);
+    border-bottom: 1px solid #eee;
+}
+
+section:nth-of-type(even) { /* Skift baggrundsfarve for bedre visuel adskillelse */
+    background-color: var(--light-color);
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* --- Services Sektion (Eksempelvis) --- */
+#services {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#services p {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
 }
 
 
-/* Styling af footeren */
 footer {
+    background: var(--dark-color);
+    color: var(--white-color);
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+    padding: 3rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 footer a {
-    color: #007BFF; /* Gør email-linket blåt for synlighed */
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
-
-.form-group {
-    margin-bottom: 20px;
+footer a:hover {
+    color: var(--white-color);
 }
 
-.form-group label {
-    display: block; /* Sørger for at label er på sin egen linje */
-    margin-bottom: 5px;
-    font-weight: bold;
+/* --- Keyframe Animationer --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%; /* Får felterne til at fylde hele containerens bredde */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Sørger for at padding ikke ødelægger bredden */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-form button {
-    display: inline-block;
-    background-color: #28a745; /* Grøn farve for "Send" */
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer; /* Viser en hånd, når man holder musen over */
-    transition: background-color 0.3s;
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-form button:hover {
-    background-color: #218838; /* Lidt mørkere grøn ved hover */
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        padding: 1.5rem 2%;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    #hero {
+        padding: 6rem 1rem;
+    }
+
+    #hero h2 {
+        font-size: 3rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 4rem 3%;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    #hero {
+        padding: 5rem 1rem;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    #hero a {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 3rem 2%;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 1rem 1%;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #hero {
+        padding: 4rem 1rem;
+        min-height: 60vh;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #hero a {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 2.5rem 1%;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+    }
 }

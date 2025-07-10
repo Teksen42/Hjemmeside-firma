@@ -3,60 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt Os - It Webløsninger</title>
-    <meta name="description" content="Kontakt It Webløsninger for et uforpligtende tilbud på din nye hjemmeside.">
+    <title>Kontakt It Webløsninger - Få et uforpligtende tilbud på din hjemmeside</title>
+    <meta name="description" content="Kontakt It Webløsninger i dag for en uforpligtende snak om din nye hjemmeside, webshop eller skræddersyet webløsning. Vi er klar til at hjælpe dig.">
     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
 
     <header>
-        <h1>It Webløsninger</h1>
-        <nav>
+        <a href="index.html" aria-label="It Webløsninger - Gå til forside">
+            <img src="logo.png" alt="It Webløsninger logo" width="200" height="50"> </a>
+        <nav aria-label="Hovednavigation">
             <ul>
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="/ydelser.html">Ydelser</a></li>
                 <li><a href="/cases.html">Cases</a></li>
                 <li><a href="/om-os.html">Om os</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+                <li><a href="kontakt.html" aria-current="page">Kontakt</a></li> </ul>
         </nav>
     </header>
 
     <main>
-        
-        <section id="kontakt">
-            <h2>Kontakt Os</h2>
-            <p>Udfyld formularen nedenfor, så vender vi tilbage til dig hurtigst muligt.</p>
-        
-            <form action="https://formspree.io/f/mgvyjkpj" method="POST">
-                
-                <div class="form-group">
-                    <label for="name">Navn:</label>
-                    <input type="text" id="name" name="name" required>
+        <section id="kontakt-os" aria-labelledby="contact-heading"> <h1 id="contact-heading">Kontakt Os – Lad os bygge din succes online</h1> <p class="intro-text">Har du spørgsmål, eller er du klar til at drøfte dit næste webprojekt? Udfyld formularen nedenfor, så vender vi tilbage til dig hurtigst muligt. Vi ser frem til at høre fra dig!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <h2>Send os en besked</h2>
+                    <form action="https://formspree.io/f/mgvyjkpj" method="POST">
+                        <div class="form-group">
+                            <label for="name">Navn: <span class="required-star">*</span></label>
+                            <input type="text" id="name" name="Navn" placeholder="Indtast dit fulde navn" required autocomplete="name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Din e-mail: <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="Email" placeholder="din.email@eksempel.dk" required autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefonnummer: (Valgfrit)</label>
+                            <input type="tel" id="phone" name="Telefonnummer" placeholder="+45 12 34 56 78" autocomplete="tel">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Emne: <span class="required-star">*</span></label>
+                            <input type="text" id="subject" name="Emne" placeholder="F.eks. Tilbud på hjemmeside eller Support" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Din besked: <span class="required-star">*</span></label>
+                            <textarea id="message" name="Besked" rows="8" placeholder="Beskriv dit projekt eller spørgsmål her..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="button primary-button">Send besked</button>
+                        <p class="form-note"><span class="required-star">*</span> Felter markeret med stjerne er obligatoriske.</p>
+                    </form>
                 </div>
-        
-                <div class="form-group">
-                    <label for="email">Din email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-        
-                <div class="form-group">
-                    <label for="message">Din besked:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-        
-                <button type="submit">Send Besked</button>
-            </form>
+
+                <aside class="contact-info">
+                    <h2>Andre måder at kontakte os på</h2>
+                    <address>
+                        <p><i class="icon-email"></i> E-mail: <a href="mailto:yasirteksen@hotmail.com">yasirteksen@hotmail.com</a></p>
+                        <p><i class="icon-phone"></i> Telefon: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+                        <p><i class="icon-location"></i> Adresse: [Din adresse her], [Postnummer og By]</p>
+                    </address>
+                    
+                    <h3>Find os på sociale medier</h3>
+                    <div class="social-media">
+                        <a href="#" aria-label="It Webløsninger på LinkedIn" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="#" aria-label="It Webløsninger på Facebook" target="_blank" rel="noopener noreferrer"><img src="facebook-icon.png" alt="Facebook"></a>
+                        </div>
+
+                    </aside>
+            </div>
         </section>
-        
-        </main>
+    </main>
 
     <footer>
-        <p>&copy; 2025 It Webløsninger</p>
-        <p>CVR: ??</p>
-        <p>Email: <a href="mailto:yasirteksen@hotmail.com">yasirteksen@hotmail.com</a></p>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> It Webløsninger. Alle rettigheder forbeholdes.</p>
+            <address>
+                <p>CVR: **Indsæt dit CVR-nummer her**</p> 
+                <p>Email: <a href="mailto:yasirteksen@hotmail.com">yasirteksen@hotmail.com</a></p>
+            </address>
+            <div class="social-media">
+                <a href="#" aria-label="It Webløsninger på LinkedIn" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#" aria-label="It Webløsninger på Facebook" target="_blank" rel="noopener noreferrer"><img src="facebook-icon.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="privatlivspolitik.html">Privatlivspolitik</a></li>
+                <li><a href="cookiepolitik.html">Cookiepolitik</a></li>
+            </ul>
+        </nav>
     </footer>
 
+    <script src="script.js"></script> 
 </body>
 </html>
