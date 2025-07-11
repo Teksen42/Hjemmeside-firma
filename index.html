@@ -3,98 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It Webløsninger - Professionelle Hjemmesider og Webudvikling</title>
-    <meta name="description" content="It Webløsninger skaber skræddersyede, resultatorienterede hjemmesider. Få en professionel webløsning, der styrker din digitale tilstedeværelse.">
-    <link rel="manifest" href="/site.webmanifest">
+    <title>IT Webløsninger // Digital Arkitektur</title>
+    <meta name="description" content="Vi designer og bygger fremtidens digitale platforme. Hurtige, skalerbare og brugervenlige webløsninger, der skaber resultater.">
+    
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <a href="index.html" aria-label="It Webløsninger - Gå til forside" class="logo">
-            <img src="/photo/Lion-AI-logo.webp" alt="It Webløsninger logo" width="100" height="80">
+    <div id="particles-js"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            ITWBL_
         </a>
-        <nav aria-label="Hovednavigation">
+        <nav class="main-nav">
             <ul>
-                <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
+                <li><a href="index.html" class="active">Forside</a></li>
                 <li><a href="ydelser.html">Ydelser</a></li>
                 <li><a href="cases.html">Cases</a></li>
-                <li><a href="om-os.html">Om os</a></li>
-                <li><a href="kontakt.html">Kontakt os</a></li>
+                <li><a href="om-os.html">Om Os</a></li>
+                <li><a href="kontakt.html" class="button nav-button">Start Projekt</a></li>
             </ul>
+            <button id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Din Partner i Digital Vækst</h1>
-                <p>Vi bygger ikke bare hjemmesider – vi skaber digitale oplevelser, der konverterer besøgende til kunder. Lad os hjælpe dig med at realisere dit fulde online potentiale.</p>
-                <a href="/kontakt.html" class="button primary-button">Start Dit Projekt i Dag</a>
+                <h1 class="glitch" data-text="FREMTIDENS DIGITALE ARKITEKTUR">FREMTIDENS DIGITALE ARKITEKTUR</h1>
+                <p>Vi bygger ikke bare hjemmesider. Vi skaber digitale økosystemer, der er bygget til at performe, skalere og dominere.</p>
+                <a href="/kontakt.html" class="button primary-button">BLIV KLAR TIL FREMTIDEN <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
         <section id="services">
-            <h2>Vores Ekspertise</h2>
-            <p class="section-intro">Vi tilbyder et komplet udvalg af digitale ydelser, der sikrer din virksomhed succes online.</p>
+            <h2>KERNEYDELSER</h2>
             <div class="service-grid">
-                <article class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Webdesign & Udvikling</h3>
-                    <p>Vi skaber unikke og brugervenlige hjemmesider, der er optimeret til alle enheder og designet til at imponere dine kunder.</p>
-                    <a href="ydelser.html#webdesign" class="button">Læs mere</a>
+                <article class="service-card">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Webudvikling & UI/UX</h3>
+                    <p>Intuitive og lynhurtige brugerflader bygget på robust kode. Vi forener æstetik med ren funktionalitet.</p>
                 </article>
-                <article class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Søgemaskineoptimering (SEO)</h3>
-                    <p>Bliv fundet af dine kunder. Vi forbedrer din synlighed på Google med målrettet SEO, der skaber organisk trafik og vækst.</p>
-                    <a href="ydelser.html#seo" class="button">Læs mere</a>
+                <article class="service-card">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>SEO & Vækststrategi</h3>
+                    <p>Bliv den autoritet, Google ikke kan ignorere. Vi implementerer teknisk SEO, der sikrer dig topplaceringer.</p>
                 </article>
-                <article class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>E-handel & Webshops</h3>
-                    <p>Drømmer du om at sælge online? Vi bygger sikre og skalerbare webshops, der gør det let at administrere produkter og øge dit salg.</p>
-                    <a href="ydelser.html#ehandel" class="button">Læs mere</a>
+                <article class="service-card">
+                     <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-handel & Integrationer</h3>
+                    <p>Skalerbare og automatiserede webshops, der konverterer besøgende til loyale kunder. Klar til vækst.</p>
                 </article>
             </div>
-            <a href="ydelser.html" class="button secondary-button">Se Alle Ydelser</a>
         </section>
+
+        <section id="cta">
+            <h2>Klar til at opgradere din digitale tilstedeværelse?</h2>
+            <p>Lad os tage en uforpligtende snak om, hvordan vi kan transformere din vision til en konkret, digital løsning.</p>
+            <a href="/kontakt.html" class="button primary-button">BOOK ET STRATEGIKALD <i class="fas fa-phone"></i></a>
+        </section>
+
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>© <span id="current-year"></span> It Webløsninger. Alle rettigheder forbeholdes.</p>
-            <address>
-                <p>CVR: **Indsæt dit CVR-nummer her**</p>
-                <p>Email: <a href="mailto:yasirteksen@hotmail.com">yasirteksen@hotmail.com</a></p>
-            </address>
-            <div class="social-media">
-                <a href="https://www.facebook.com" aria-label="It Webløsninger på Facebook"><img src="photo/facebook-icon.png" alt="Facebook"></a>
-                <a href="https://www.linkedin.com" aria-label="It Webløsninger på LinkedIn"><img src="photo/linkedin-icon.png" alt="LinkedIn"></a>
-                <a href="https://www.instagram.com" aria-label="It Webløsninger på Instagram"><img src="photo/Instagram_icon.png" alt="Instagram"></a>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h4>ITWBL_</h4>
+                <p>Digital Arkitektur & Vækst</p>
+                <p>CVR: [Dit CVR-nummer]</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="ydelser.html">Ydelser</a></li>
+                    <li><a href="cases.html">Cases</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="https://instagram.com/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <nav class="footer-nav">
-            <ul>
-                <li><a href=>Privatlivspolitik</a></li>
-                <li><a href=>Cookiepolitik</a></li>
-            </ul>
-        </nav>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> IT Webløsninger. Alle rettigheder forbeholdes.</p>
+        </div>
     </footer>
-
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>

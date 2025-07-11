@@ -1,24 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@600&display=swap');
+/* --- MODERN & TECHNOLOGICAL REDESIGN --- */
 
-/* --- Generelle Styles --- */
+/* --- 0. RODVARIABLER & IMPORTS --- */
 :root {
-    /* Opdateret farvepalet for et mere moderne og professionelt look */
-    --primary-color: #0A74DA; /* En stærkere, mere selvsikker blå */
-    --secondary-color: #5A6774;
-    --dark-color: #1D242B; /* Lidt blødere end ren sort */
-    --light-color: #f9f9f9;
-    --white-color: #ffffff;
-
-    /* Opdaterede skrifttyper for bedre læsbarhed */
-    --font-heading: 'Lora', serif;
-    --font-body: 'Roboto', sans-serif;
-
-    /* Opdateret gradient for et mere subtilt look */
-    --gradient-bg: linear-gradient(135deg, #0A74DA 0%, #0056b3 100%);
-    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
-    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --bg-dark: #0a0f1e; /* Dyb mørkeblå/sort baggrund */
+    --text-primary: #cdd6f4; /* Let læselig, afdæmpet hvid */
+    --text-secondary: #a6adc8; /* Lidt mørkere tekst til detaljer */
+    --accent-glow: #00f7ff; /* Skarp, elektrisk blå/cyan accent */
+    --card-bg: rgba(28, 35, 58, 0.5); /* Semi-transparent kortbaggrund */
+    --border-color: rgba(0, 247, 255, 0.2); /* Subtil kantfarve */
+    
+    --font-primary: 'Poppins', sans-serif;
+    
+    --glow-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow);
 }
 
+/* --- 1. GENEREL STYLING & NULSTILLING --- */
 * {
     margin: 0;
     padding: 0;
@@ -30,383 +26,277 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
-    line-height: 1.7; /* Lidt mere luft mellem linjerne */
-    color: var(--dark-color);
-    background-color: var(--white-color); /* Start med en ren hvid baggrund */
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+h1, h2, h3 {
+    font-weight: 700;
+    color: #ffffff;
 }
 
-a:hover {
-    color: #0056b3;
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 3rem; color: var(--accent-glow); }
+h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+p { color: var(--text-secondary); margin-bottom: 1rem; }
+a { color: var(--accent-glow); text-decoration: none; transition: all 0.3s ease; }
+a:hover { filter: brightness(1.2); }
+
+main {
+    position: relative;
+    z-index: 2;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-    font-weight: 600;
+/* --- 2. PARTIKEL-BAGGRUND --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: var(--secondary-color); /* Lidt blødere tekstfarve for brødtekst */
-}
-
-/* --- Header & Navigation --- */
-header {
-    background: var(--white-color); /* Hvid header for et renere look */
-    color: var(--dark-color);
-    padding: 1rem 5%;
+/* --- 3. HEADER & NAVIGATION --- */
+.main-header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow-light); /* En mere subtil skygge */
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.3s ease;
+    padding: 1.5rem 5%;
+    background-color: rgba(10, 15, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
-header .logo img {
-    vertical-align: middle;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-glow);
+    text-shadow: var(--glow-shadow);
 }
 
-nav ul {
+.main-nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
-    align-items: center;
+    gap: 2.5rem;
+    align-items: center; 
 }
 
-nav ul li a {
-    color: var(--dark-color); /* Mørk tekst på hvid baggrund */
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.3s ease;
+.main-nav a {
+    color: var(--text-primary);
+    font-weight: 400;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
+.main-nav a.active, .main-nav a:hover {
+    color: var(--accent-glow);
+    text-shadow: 0 0 5px var(--accent-glow);
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 100%;
+/* --- 4. KNAPPER --- */
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: var(--primary-color);
+.primary-button {
+    background-color: var(--accent-glow);
+    color: var(--bg-dark);
+    box-shadow: var(--glow-shadow);
 }
 
-nav .button-contact {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--accent-glow), 0 0 25px var(--accent-glow);
 }
 
-nav .button-contact:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    color: var(--white-color);
+.nav-button {
+    padding: 8px 20px;
+    background-color: transparent;
+    color: var(--accent-glow);
+    border-color: var(--accent-glow);
 }
 
-/* --- Hero Sektion --- */
+.nav-button:hover {
+    background-color: var(--accent-glow);
+    color: var(--bg-dark);
+}
+
+/* --- 5. HERO SEKTION --- */
 #hero {
-    background: var(--gradient-bg);
-    color: var(--white-color);
-    text-align: center;
-    padding: 7rem 2rem;
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 5%;
 }
 
 .hero-content {
-    max-width: 800px;
-    animation: fadeInDown 1s ease-out;
+    max-width: 900px;
 }
 
-#hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    color: var(--white-color);
-}
-
-#hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgba(255, 255, 255, 0.9);
-    animation: fadeInUp 1s 0.3s ease-out forwards;
-    opacity: 0; /* Skjul indtil animation starter */
-}
-
-#hero .primary-button {
-    display: inline-block;
-    background-color: var(--white-color);
-    color: var(--primary-color);
-    padding: 1.1rem 2.2rem;
-    border-radius: 50px;
+.hero-content p {
     font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    box-shadow: var(--shadow-medium);
-    transition: all 0.3s ease;
-    animation: fadeInScale 1s 0.6s ease-out forwards;
-    opacity: 0;
+    max-width: 700px;
+    margin: 1.5rem auto 2.5rem;
 }
 
-#hero .primary-button:hover {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.hero-content .primary-button i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
 }
 
-/* --- Sektioner Generelt --- */
-section {
+.hero-content .primary-button:hover i {
+    transform: translateX(5px);
+}
+
+/* --- 6. SERVICES SEKTION --- */
+#services {
     padding: 6rem 5%;
     text-align: center;
 }
 
-#services {
-    background-color: var(--light-color); /* Brug den lyse baggrundsfarve her */
-}
-
-section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-}
-
-.section-intro {
-    max-width: 750px;
-    margin: 0 auto 4rem auto;
-    font-size: 1.2rem;
-}
-
-/* --- Services Sektion --- */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
 }
 
-.service-item {
-    background: var(--white-color);
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid var(--primary-color); /* Tilføjer en accentfarve */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-.service-item:hover {
+.service-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
 }
 
-/* Stil for Font Awesome ikoner */
-.service-icon {
-    font-size: 3rem; /* Større ikoner */
-    color: var(--primary-color);
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-glow);
     margin-bottom: 1.5rem;
 }
 
-.service-item h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--dark-color); /* Sørg for at overskriften er mørk */
-}
-
-.service-item p {
-    color: var(--secondary-color); /* Sørg for at brødtekst bruger den sekundære farve */
-}
-
-.service-item .button {
-    margin-top: 1.5rem;
-    display: inline-block;
-    background-color: transparent;
-    color: var(--primary-color);
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    border: 2px solid var(--primary-color);
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.service-item .button:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-.secondary-button {
-    background: var(--secondary-color);
-    color: var(--white-color);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    border: 2px solid transparent;
-}
-
-.secondary-button:hover {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-}
-
-/* --- Footer --- */
-footer {
-    background: var(--dark-color);
-    color: rgba(255, 255, 255, 0.7); /* Lidt mere transparent tekst */
+/* --- 7. CTA SEKTION --- */
+#cta {
+    padding: 6rem 5%;
     text-align: center;
-    padding: 4rem 2rem;
-    font-size: 1rem;
-    line-height: 1.8;
+    background-color: rgba(10, 15, 30, 0.5);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+#cta h2 {
+    color: #fff;
+}
+
+#cta p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
 }
 
-footer p {
-    margin: 0.2rem 0;
-    color: rgba(255, 255, 255, 0.7);
+/* --- 8. FOOTER --- */
+.main-footer {
+    padding: 4rem 5% 2rem;
+    position: relative; /* Tilføjet for at z-index virker */
+    z-index: 2;         /* Tilføjet for at løfte den over partiklerne */
 }
 
-footer a {
-    color: var(--primary-color);
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
-footer a:hover {
-    color: var(--white-color);
-    text-decoration: underline;
+.footer-info h4, .footer-links h4, .footer-social h4 {
+    color: var(--accent-glow);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-.social-media {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.social-media img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-    filter: grayscale(100%) invert(70%); /* Gør ikonerne mere neutrale */
-}
-
-.social-media a:hover img {
-    transform: scale(1.1);
-    filter: none;
-}
-
-.footer-nav ul {
+.footer-links ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    padding-left: 0;
+}
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+.footer-links a {
+    color: var(--text-secondary);
+}
+.footer-links a:hover {
+    color: var(--accent-glow);
 }
 
-.footer-nav a {
-    color: rgba(255, 255, 255, 0.8); /* Giver teksten en let hvid farve */
-    text-decoration: none;
-    transition: color 0.3s ease;
+.footer-social a {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    color: var(--text-secondary);
 }
 
-.footer-nav a:hover {
-    color: var(--white-color); /* Gør teksten helt hvid ved hover */
-    text-decoration: underline;
+.footer-bottom {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-/* --- Keyframe Animationer (justeret for forbedret timing) --- */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* --- Responsive Design (bevaret med små justeringer) --- */
-@media (max-width: 992px) {
-    header {
-        flex-direction: column;
-        padding: 1rem 2%;
-    }
-    nav ul {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #hero h1 { font-size: 3rem; }
-    #hero p { font-size: 1.2rem; }
-    section h2 { font-size: 2.5rem; }
+/* --- 9. RESPONSIVT DESIGN & MOBILMENU --- */
+#mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    body { line-height: 1.6; }
-    #hero h1 { font-size: 2.5rem; }
-    #hero p { font-size: 1.1rem; }
-    .service-grid { grid-template-columns: 1fr; }
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+    }
+    .main-nav ul.active {
+        display: flex;
+    }
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    #mobile-menu-toggle {
+        display: block;
+    }
 }
 
-@media (max-width: 576px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    #hero { padding: 4rem 1.5rem; }
-    #hero h1 { font-size: 2.2rem; }
-    p { font-size: 1rem; }
-}
+
 /* =================================
    KONTAKTSIDE STYLES
    ================================= */
