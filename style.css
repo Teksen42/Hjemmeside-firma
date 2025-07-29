@@ -1,7 +1,7 @@
 /* ===== GENERELLE STYLES ===== */
 :root {
-    --primary-color: #FF6B4A; /* Primær orange fra billedet */
-    --secondary-color: #FF8A65; /* Lidt lysere orange til gradients */
+    --primary-color: #9a04b8; /* Primær orange fra billedet */
+    --secondary-color: #580a77; /* Lidt lysere orange til gradients */
     --dark-color: #212121;      /* Mørk tekstfarve */
     --light-color: #FFFFFF;     /* Hvid baggrund og tekst */
     --gray-color: #F5F5F5;      /* Let grå baggrund til sektioner */
@@ -33,12 +33,12 @@ p {
 }
 
 /* ===== HEADER & NAVIGATION ===== */
+/* ===== HEADER & NAVIGATION (OPDATERET) ===== */
 .main-header {
     background: var(--light-color);
     padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Beholder flexbox for lodret centrering */
+    align-items: center; /* Centrerer elementerne lodret */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -46,22 +46,28 @@ p {
 }
 
 .logo {
+    /* Logo-styling er uændret */
     font-size: 1.8em;
     font-weight: 700;
     color: var(--dark-color);
     text-decoration: none;
 }
 
+/* ... din anden logo-styling er uændret ... */
 .logo-highlight {
     color: var(--primary-color);
 }
-
 .logo-subtitle {
     display: block;
     font-size: 0.4em;
     font-weight: 300;
     color: #777;
     margin-top: -5px;
+}
+
+/* NYT: Denne regel centrerer navigationen */
+.main-nav {
+    margin: 0 auto; /* Top/bund margin er 0, venstre/højre er auto */
 }
 
 .main-nav ul {
@@ -76,6 +82,7 @@ p {
     margin-left: 25px;
 }
 
+/* ... resten af din CSS er uændret ... */
 .main-nav a {
     text-decoration: none;
     color: var(--dark-color);
@@ -88,7 +95,7 @@ p {
 }
 
 #mobile-menu-toggle {
-    display: none; /* Skjult på desktop */
+    display: none;
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -113,7 +120,7 @@ p {
 }
 
 .nav-button:hover {
-    background-color: #E5533D;
+    background-color: #9d06f5;
     color: var(--light-color);
 }
 
@@ -124,8 +131,8 @@ p {
 }
 
 .primary-button:hover {
-    background-color: #E5533D;
-    border-color: #E5533D;
+    background-color: #8807c4;
+    border-color: #63067a;
 }
 
 /* ===== HERO SEKTION ===== */
@@ -169,48 +176,142 @@ p {
     margin: 0 auto 30px auto;
 }
 
-/* ===== SERVICES SEKTION ===== */
-#services {
-    padding: 80px 20px;
-    background-color: var(--light-color);
-    text-align: center;
+/* Styling for containeren der holder knapperne i hero-sektionen */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Gør at knapperne kan rykke under hinanden på små skærme */
+    gap: 20px; /* Mellemrum mellem knapperne */
+    margin-top: 30px;
 }
 
-#services h2 {
-    font-size: 2.5em;
+/* Styling for den nye "ring nu" knap */
+.secondary-button {
+    background-color: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--light-color); /* Hvid kant */
+}
+
+.secondary-button:hover {
+    background-color: var(--light-color); /* Bliver hvid ved hover */
+    color: var(--primary-color); /* Teksten bliver orange ved hover */
+}
+
+/* Sørger for at ikoner i knapper har lidt plads */
+.button i {
+    margin-right: 8px;
+}
+
+/* ======================================================= */
+/* OPDATERET STYLING FOR SERVICESEKTION
+/* ======================================================= */
+
+#services {
+    padding: 100px 20px;
+    /* Let lyserød/beige baggrundsfarve fra billedet */
+    background-color: #f5f5f5; 
+}
+
+/* Header-sektionen i toppen */
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.services-header .subtitle {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+.services-header h2 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
+.services-header p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Gitteret der holder på kortene */
+.service-grid {
+    display: grid;
+    /* Opretter 3 kolonner på store skærme, 2 på tablets og 1 på mobil */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Selve kort-designet */
 .service-card {
-    background: var(--light-color);
-    padding: 40px;
+    background-color: var(--light-color);
+    border: 1px solid #9607e9;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 30px;
     text-align: left;
+    display: flex;
+    flex-direction: column; /* Vigtigt for at placere knappen i bunden */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.07);
 }
 
-.card-icon {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+/* Billedet i toppen af kortet */
+.card-image {
+    width: 100%;
+    height: 180px; /* Giver alle billeder en ens højde */
+    object-fit: contain; /* Sikrer at billedet ikke strækkes */
+    margin-bottom: 25px;
 }
 
+/* Overskriften på kortet */
 .service-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+/* Brødteksten på kortet */
+.service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #7309ec;
+    flex-grow: 1; /* Skubber knappen ned i bunden */
+}
+
+/* Knappen på kortet */
+.card-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px; /* Gør knappen pille-formet */
+    font-weight: 600;
+    color: var(--light-color);
+    text-align: center;
+    margin-top: 20px; /* Afstand til teksten over */
+    
+    /* Gradient baggrund fra billedet */
+    background: linear-gradient(90deg, #5c04eb, #5503b3);
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+    color: var(--light-color);
 }
 
 
@@ -258,7 +359,7 @@ p {
 }
 
 .main-footer p, .main-footer a {
-    color: #ccc;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 300;
 }
@@ -334,8 +435,8 @@ p {
 
 /* ===== GENERELLE STYLES ===== */
 :root {
-    --primary-color: #FF6B4A;
-    --secondary-color: #FF8A65;
+    --primary-color: #9f1df5;
+    --secondary-color: #7f0aec;
     --dark-color: #212121;
     --light-color: #FFFFFF;
     --gray-color: #F5F5F5;
@@ -436,7 +537,7 @@ p {
 }
 
 .nav-button:hover {
-    background-color: #E5533D;
+    background-color: #bb07f1;
     color: var(--light-color) !important;
 }
 
@@ -657,7 +758,7 @@ p {
 }
 
 .button-submit:hover {
-    background-color: #E5533D;
+    background-color: #6c07f1;
 }
 
 .form-note {
@@ -706,5 +807,111 @@ p {
     }
     #contact-page {
         margin: 40px auto;
+    }
+}
+
+/* ======================================================= */
+/* STYLING FOR FILOSOFI SEKTION
+/* ======================================================= */
+
+#philosophy {
+    padding: 100px 20px;
+    background-color: #f9f9f9; /* En let grå baggrund for at skabe kontrast */
+    overflow: hidden; /* For at undgå vandret scrollbar */
+}
+
+/* En genbrugelig container-klasse for at centrere indhold */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.philosophy-content {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Mellemrum mellem tekst og billede */
+}
+
+.philosophy-text {
+    flex: 1; /* Tekst-kolonnen tager 1 del af pladsen */
+    min-width: 300px;
+}
+
+.philosophy-image {
+    flex: 1; /* Billede-kolonnen tager 1 del af pladsen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.philosophy-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Typografi styling for sektionen */
+.philosophy-text .subtitle {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.philosophy-text h2 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.philosophy-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+}
+
+.philosophy-text .highlight {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-top: 20px;
+}
+
+/* Styling af knapperne i sektionen */
+.philosophy-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ny knap-stil til sektioner med lys baggrund */
+.secondary-button-dark {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid #ddd;
+    font-weight: 600;
+}
+
+.secondary-button-dark:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+
+/* Responsivt design for mindre skærme */
+@media (max-width: 900px) {
+    .philosophy-content {
+        flex-direction: column-reverse; /* Placerer billedet øverst på mobil */
+        text-align: center;
+    }
+
+    .philosophy-buttons {
+        justify-content: center;
     }
 }

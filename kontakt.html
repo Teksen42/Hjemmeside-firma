@@ -17,16 +17,24 @@
     <header class="main-header">
         <a href="index.html" class="logo">
             ITWBL<span class="logo-highlight"></span>
+            <span class="logo-title">Digital Arkitektur</span>
+            <!-- tilføj billed logo her hvis nødvendigt -->
             <span class="logo-subtitle">Digital Arkitektur</span>
         </a>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Forside</a></li>
+                <li><a href="index.html" class="active">Forside</a></li>
+                <li><a href="webshop.html">Webshop</a></li>
+                <li><a href="hosting.html">Hosting</a></li>
+                <li><a href="hjemmeside.html">Hjemmeside</a></li>
+                <li><a href="Udvikling.html">Udvikling</a></li>
                 <li><a href="ydelser.html">Ydelser</a></li>
                 <li><a href="cases.html">Cases</a></li>
                 <li><a href="om-os.html">Om Os</a></li>
-                <li><a href="kontakt.html" class="button nav-button active">Start Projekt</a></li>
+                <li><a href="kontakt.html" class="button nav-button">Start Projekt</a></li>
             </ul>
+
+            <!-- navbar dropdown -->
             <button id="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -99,6 +107,9 @@
         </section>
     </main>
 
+   
+
+
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -114,12 +125,21 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </div>
+            
             <div class="footer-social">
                 <h4>Connect</h4>
                 <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
+            <iframe title="New York"
+    width="300"
+    height="200"
+    id="gmap_canvas"
+    src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    scrolling="no">
+</iframe>
+
         </div>
         <div class="footer-bottom">
             <p>© <span id="current-year"></span> IT Webløsninger. Alle rettigheder forbeholdes.</p>
