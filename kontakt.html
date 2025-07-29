@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Webløsninger Digital Arkitektur</title>
-    <meta name="description" content="Vi designer og bygger fremtidens digitale platforme. Hurtige, skalerbare og brugervenlige webløsninger, der skaber resultater.">
+    <title>Kontakt Os | IT Webløsninger Digital Arkitektur</title>
+    <meta name="description" content="Kontakt os for en uforpligtende snak om dit næste digitale projekt. Vi vender tilbage inden for 24 timer.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
-    <div id="particles-js"></div>
 
     <header class="main-header">
         <a href="index.html" class="logo">
@@ -28,7 +25,7 @@
                 <li><a href="ydelser.html">Ydelser</a></li>
                 <li><a href="cases.html">Cases</a></li>
                 <li><a href="om-os.html">Om Os</a></li>
-                <li><a href="kontakt.html" class="button nav-button">Start Projekt</a></li>
+                <li><a href="kontakt.html" class="button nav-button active">Start Projekt</a></li>
             </ul>
             <button id="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
@@ -72,15 +69,15 @@
                 </aside>
 
                 <div class="contact-form-container">
-                    <form action="https://formspree.io/f/mgvyjkpj" method="POST">
+                    <form action="https://formspree.io/f/mpwlrnja" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Navn <span class="required">*</span></label>
-                                <input type="text" id="name" name="Navn" placeholder="Dit navn" required autocomplete="name">
+                                <input type="text" id="name" name="name" placeholder="Dit navn" required autocomplete="name">
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail <span class="required">*</span></label>
-                                <input type="email" id="email" name="Email" placeholder="din@email.dk" required autocomplete="email">
+                                <input type="email" id="email" name="email" placeholder="din@email.dk" required autocomplete="email">
                             </div>
                         </div>
 
@@ -91,7 +88,7 @@
 
                         <div class="form-group">
                             <label for="message">Besked <span class="required">*</span></label>
-                            <textarea id="message" name="Besked" rows="6" placeholder="Fortæl os om dit projekt eller dine spørgsmål..." required></textarea>
+                            <textarea id="message" name="message" rows="6" placeholder="Fortæl os om dit projekt eller dine spørgsmål..." required></textarea>
                         </div>
                         
                         <button type="submit" class="button-submit">Send Besked</button>
@@ -102,7 +99,7 @@
         </section>
     </main>
 
-<footer class="main-footer">
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-info">
                 <h4>ITWBL</h4>
@@ -121,16 +118,15 @@
                 <h4>Connect</h4>
                 <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© <span id="current-year"></span> IT Webløsninger. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>

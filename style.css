@@ -1,58 +1,145 @@
-/* --- MODERN & TECHNOLOGICAL REDESIGN --- */
-
-/* --- 0. RODVARIABLER & IMPORTS --- */
+/* ===== GENERELLE STYLES ===== */
 :root {
-    --bg-dark: #0a0f1e; /* Dyb mørkeblå/sort baggrund */
-    --text-primary: #cdd6f4; /* Let læselig, afdæmpet hvid */
-    --text-secondary: #a6adc8; /* Lidt mørkere tekst til detaljer */
-    --accent-glow: #00f7ff; /* Skarp, elektrisk blå/cyan accent */
-    --card-bg: rgba(28, 35, 58, 0.5); /* Semi-transparent kortbaggrund */
-    --border-color: rgba(0, 247, 255, 0.2); /* Subtil kantfarve */
-    
-    --font-primary: 'Poppins', sans-serif;
-    
-    --glow-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow);
-}
-
-/* --- 1. GENEREL STYLING & NULSTILLING --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+    --primary-color: #FF6B4A; /* Primær orange fra billedet */
+    --secondary-color: #FF8A65; /* Lidt lysere orange til gradients */
+    --dark-color: #212121;      /* Mørk tekstfarve */
+    --light-color: #FFFFFF;     /* Hvid baggrund og tekst */
+    --gray-color: #F5F5F5;      /* Let grå baggrund til sektioner */
+    --font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    line-height: 1.7;
-    overflow-x: hidden;
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
     font-weight: 700;
-    color: #ffffff;
+    color: var(--dark-color);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
-h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 3rem; color: var(--accent-glow); }
-h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-p { color: var(--text-secondary); margin-bottom: 1rem; }
-a { color: var(--accent-glow); text-decoration: none; transition: all 0.3s ease; }
-a:hover { filter: brightness(1.2); }
+p {
+    font-weight: 300;
+    color: #555;
+}
 
-main {
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.main-header {
+    background: var(--light-color);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.logo-highlight {
+    color: var(--primary-color);
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 300;
+    color: #777;
+    margin-top: -5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary-color);
+}
+
+#mobile-menu-toggle {
+    display: none; /* Skjult på desktop */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+
+/* ===== KNAPPER ===== */
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.nav-button:hover {
+    background-color: #E5533D;
+    color: var(--light-color);
+}
+
+.primary-button {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-button:hover {
+    background-color: #E5533D;
+    border-color: #E5533D;
+}
+
+/* ===== HERO SEKTION ===== */
+#hero {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    padding: 100px 20px;
+    text-align: center;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
 }
 
-/* --- 2. PARTIKEL-BAGGRUND --- */
 #particles-js {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -60,366 +147,478 @@ main {
     z-index: 1;
 }
 
-/* --- 3. HEADER & NAVIGATION --- */
-.main-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    background-color: rgba(10, 15, 30, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-glow);
-    text-shadow: var(--glow-shadow);
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-    align-items: center; 
-}
-
-.main-nav a {
-    color: var(--text-primary);
-    font-weight: 400;
-}
-
-.main-nav a.active, .main-nav a:hover {
-    color: var(--accent-glow);
-    text-shadow: 0 0 5px var(--accent-glow);
-}
-
-/* --- 4. KNAPPER --- */
-.button {
-    display: inline-block;
-    padding: 12px 28px;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-
-.primary-button {
-    background-color: var(--accent-glow);
-    color: var(--bg-dark);
-    box-shadow: var(--glow-shadow);
-}
-
-.primary-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px var(--accent-glow), 0 0 25px var(--accent-glow);
-}
-
-.nav-button {
-    padding: 8px 20px;
-    background-color: transparent;
-    color: var(--accent-glow);
-    border-color: var(--accent-glow);
-}
-
-.nav-button:hover {
-    background-color: var(--accent-glow);
-    color: var(--bg-dark);
-}
-
-/* --- 5. HERO SEKTION --- */
-#hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 5%;
-}
-
 .hero-content {
-    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 1.5rem auto 2.5rem;
+#hero h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--light-color);
+    margin-bottom: 20px;
 }
 
-.hero-content .primary-button i {
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
+#hero p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--light-color);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
-.hero-content .primary-button:hover i {
-    transform: translateX(5px);
-}
-
-/* --- 6. SERVICES SEKTION --- */
+/* ===== SERVICES SEKTION ===== */
 #services {
-    padding: 6rem 5%;
+    padding: 80px 20px;
+    background-color: var(--light-color);
     text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .service-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 2.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    background: var(--light-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    border-color: var(--accent-glow);
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 .card-icon {
-    font-size: 2.5rem;
-    color: var(--accent-glow);
-    margin-bottom: 1.5rem;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
-/* --- 7. CTA SEKTION --- */
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+
+/* ===== CTA SEKTION ===== */
 #cta {
-    padding: 6rem 5%;
+    background-color: var(--gray-color);
+    padding: 80px 20px;
     text-align: center;
-    background-color: rgba(10, 15, 30, 0.5);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
 }
 
 #cta h2 {
-    color: #fff;
-}
-
-#cta p {
+    font-size: 2.2em;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
+    margin: 0 auto 20px auto;
 }
 
-/* --- 8. FOOTER --- */
+
+/* ===== FOOTER ===== */
 .main-footer {
-    padding: 4rem 5% 2rem;
-    position: relative; /* Tilføjet for at z-index virker */
-    z-index: 2;         /* Tilføjet for at løfte den over partiklerne */
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding-top: 60px;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 3rem;
-    margin-bottom: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.footer-info h4, .footer-links h4, .footer-social h4 {
-    color: var(--accent-glow);
-    margin-bottom: 1rem;
+.footer-info, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-footer h4 {
+    font-size: 1.2em;
     font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.main-footer p, .main-footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 300;
 }
 
 .footer-links ul {
     list-style: none;
+    padding: 0;
 }
+
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
 }
-.footer-links a {
-    color: var(--text-secondary);
-}
+
 .footer-links a:hover {
-    color: var(--accent-glow);
+    color: var(--primary-color);
 }
 
 .footer-social a {
-    font-size: 1.5rem;
-    margin-right: 1.5rem;
-    color: var(--text-secondary);
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #444;
 }
 
-/* --- 9. RESPONSIVT DESIGN & MOBILMENU --- */
+
+/* ===== RESPONSIVT DESIGN (MOBIL) ===== */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    
+    .main-nav ul {
+        display: none; /* Skjul menu på mobil */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Højden på header */
+        left: 0;
+        background-color: var(--light-color);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Vis menu når den er aktiv */
+    }
+    
+    .main-nav li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    #mobile-menu-toggle {
+        display: block; /* Vis hamburger-ikon */
+    }
+
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+}
+
+/* ===== GENERELLE STYLES ===== */
+:root {
+    --primary-color: #FF6B4A;
+    --secondary-color: #FF8A65;
+    --dark-color: #212121;
+    --light-color: #FFFFFF;
+    --gray-color: #F5F5F5;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+p {
+    font-weight: 300;
+    color: #555;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.main-header {
+    background: var(--light-color);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 300;
+    color: #777;
+    margin-top: -5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary-color);
+}
+
 #mobile-menu-toggle {
     display: none;
+    font-size: 1.5rem;
     background: none;
     border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
+    color: var(--dark-color);
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .main-nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-dark);
-        border-bottom: 1px solid var(--border-color);
-        padding: 1rem 0;
-    }
-    .main-nav ul.active {
-        display: flex;
-    }
-    .main-nav li {
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
-    }
-    #mobile-menu-toggle {
-        display: block;
-    }
+/* ===== KNAPPER ===== */
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
 
-/* =================================
-   KONTAKTSIDE STYLES
-   ================================= */
+.nav-button:hover {
+    background-color: #E5533D;
+    color: var(--light-color) !important;
+}
 
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-info, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-footer h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.main-footer p, .main-footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social a {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+}
+
+/* ===== KONTAKTSIDE STYLING ===== */
 #contact-page {
-    padding: 5rem 5%;
-    background-color: var(--white-color);
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
 .contact-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 60px;
 }
 
 .contact-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.8em;
+}
+
+.contact-header .section-intro {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; /* 1 del til info, 1.5 dele til form */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: var(--white-color);
-    box-shadow: var(--shadow-medium);
-    border-radius: 8px;
-    overflow: hidden; /* Sørger for at border-radius virker på child-elementer */
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
-/* === Venstre side: Kontaktinformation === */
 .contact-info {
-    background: var(--dark-color);
-    color: var(--white-color);
-    padding: 3rem;
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .contact-info h3 {
-    color: var(--white-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
+    color: var(--light-color);
+    font-size: 1.8em;
 }
 
 .contact-info p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-info address {
     font-style: normal;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    color: var(--light-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 1em;
+    transition: opacity 0.3s ease;
 }
 
 .contact-item:hover {
-    color: var(--primary-color);
+    opacity: 0.8;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
-    width: 25px; /* Giver plads til ikonet */
-    color: var(--primary-color);
+    font-size: 1.2em;
+    width: 30px;
+    margin-right: 15px;
 }
 
 .social-media-contact {
-    margin-top: 3rem;
-    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-media-contact h4 {
-    color: var(--white-color);
-    margin-bottom: 1rem;
+    color: var(--light-color);
 }
 
 .social-media-contact a {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.8rem;
-    margin: 0 0.75rem; 
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: var(--light-color);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
 }
 
-.social-media-contact a:hover {
-    color: var(--white-color);
-    transform: scale(1.1);
-}
-
-/* === Højre side: Kontaktformular === */
 .contact-form-container {
-    padding: 3rem;
+    flex: 2;
+    min-width: 300px;
+    padding: 40px;
 }
 
 .form-row {
     display: flex;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
     width: 100%;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #444;
 }
 
 .form-group .required {
@@ -429,11 +628,11 @@ main {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.9rem 1rem;
+    padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: var(--font-body);
-    font-size: 1rem;
+    font-family: var(--font-family);
+    font-size: 1em;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -441,63 +640,71 @@ main {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(10, 116, 218, 0.2);
-}
-
-.form-group textarea {
-    resize: vertical; /* Tillader kun lodret resize */
+    box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.2);
 }
 
 .button-submit {
-    display: inline-block;
     width: 100%;
-    padding: 1rem;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--light-color);
     background-color: var(--primary-color);
-    color: var(--white-color);
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .button-submit:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+    background-color: #E5533D;
 }
 
 .form-note {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
     text-align: right;
 }
 
-/* === Responsive tilpasning for kontaktside === */
-@media (max-width: 992px) {
+/* ===== RESPONSIVT DESIGN ===== */
+@media (max-width: 900px) {
     .contact-container {
-        grid-template-columns: 1fr; /* Stak elementerne ovenpå hinanden */
-    }
-
-    .contact-info {
-        border-radius: 8px 8px 0 0;
+        flex-direction: column;
     }
 }
 
 @media (max-width: 768px) {
-    .contact-header h1 {
-        font-size: 2.5rem;
+    .main-header {
+        padding: 15px 20px;
     }
-    
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: var(--light-color);
+    }
+    .main-nav ul.active {
+        display: flex;
+    }
+    .main-nav li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    #mobile-menu-toggle {
+        display: block;
+    }
     .form-row {
         flex-direction: column;
         gap: 0;
     }
-
-    #contact-page,
-    .contact-info,
-    .contact-form-container {
-        padding: 2rem;
+    .contact-header h1 {
+        font-size: 2.2em;
+    }
+    #contact-page {
+        margin: 40px auto;
     }
 }
