@@ -3,33 +3,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== HER REDIGERER DU DINE MEDARBEJDERE =====
     const teamMembers = [
         {
-             image: 'photo/IMG_0503.png',
-            name: 'Mirsad kose',
+            image: 'photo/IMG_0503.png',
+            name: 'Mirsad Kose',
             title: 'Ledende Udvikler',
-            description: 'Lars har 20 års erfaring inden for branchen og leder firmaet med en klar vision for fremtiden.'
+            description: 'Mirsad har erfaring inden for branchen og leder firmaet med en klar vision for fremtiden.',
+            email: 'Mucco2635@gmail.com',
+            phone: '+4593832610' // Erstat med rigtigt telefonnummer
         },
         {
-             image: 'photo/IMG_0504.png',
+            image: 'photo/IMG_0504.png',
             name: 'Muhammed Celik',
             title: 'Marketingchef',
-            description: 'Mette er en kreativ strateg, der brænder for at skabe kampagner, der engagerer og konverterer.'
+            description: 'Muhammed er en kreativ strateg, der brænder for at skabe kampagner, der engagerer og konverterer.',
+            email: 'muhammedclk2635@gmail.com',
+            phone: '+4542372113' // Erstat med rigtigt telefonnummer
         },
         {
-             image: 'photo/IMG_0502.png',
+            image: 'photo/IMG_0502.png',
             name: 'Yasir Teksen',
             title: 'Administrerende Direktør',
-            description: 'Søren er hjernen bag vores tekniske løsninger og sikrer, at vores produkter altid er i topkvalitet.'
+            description: 'Yasir er hjernen bag vores tekniske løsninger og sikrer, at vores produkter altid er i topkvalitet.',
+            email: 'yasirteksen@hotmail.com ',
+            phone: '+4561708150' // Erstat med rigtigt telefonnummer
         },
-        
     ];
     // ===============================================
 
     const teamGrid = document.getElementById('team-grid');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNavUl = document.querySelector('.main-nav ul');
+    const currentYearSpan = document.getElementById('current-year');
 
     // Funktion til at vise medarbejderne på siden
     function displayTeamMembers() {
-        // Tømmer gridden, hvis der allerede er noget
-        teamGrid.innerHTML = '';
+        if (!teamGrid) return; // Stop hvis team-grid ikke findes
+        
+        teamGrid.innerHTML = ''; // Tømmer gridden
 
         teamMembers.forEach(member => {
             const card = document.createElement('div');
@@ -41,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${member.name}</h3>
                     <span class="title">${member.title}</span>
                     <p class="description">${member.description}</p>
+                    
+                    <div class="team-card-contact">
+                        <a href="mailto:${member.email}" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="tel:${member.phone}" class="contact-link"><i class="fas fa-phone"></i> Ring</a>
+                    </div>
                 </div>
             `;
 
@@ -48,14 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Kald funktionen for at bygge siden
+    // Kald funktionen for at bygge team-sektionen
     displayTeamMembers();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNavUl = document.querySelector('.main-nav ul');
-    const currentYearSpan = document.getElementById('current-year');
 
     // Mobilmenu toggle
     if (mobileMenuToggle) {
@@ -69,22 +77,3 @@ document.addEventListener('DOMContentLoaded', function () {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNavUl = document.querySelector('.main-nav ul');
-    const currentYearSpan = document.getElementById('current-year');
-
-    // Mobilmenu toggle
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', () => {
-            mainNavUl.classList.toggle('active');
-        });
-    }
-    
-    // Opdater årstal i footer
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
-});
-
