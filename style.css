@@ -1325,56 +1325,61 @@ body {
     }
 }
 
-/* --- Dropdown Menu Styling --- */
+/* ================================== */
+/* === DROPDOWN MENU - KORREKT KODE === */
+/* ================================== */
 
-/* Gør det muligt at positionere dropdown-menuen i forhold til dette element */
+/* Gør det muligt at positionere dropdown-menuen korrekt */
 .main-nav .dropdown {
     position: relative;
+    padding-bottom: 10px; /* Giver lidt plads til dropdown-menuen */
 }
 
-/* Lille pil ved siden af menupunktet */
+/* VIGTIGT: Skjuler dropdown-menuen som standard. 
+  Dette er den regel, der sandsynligvis mangler hos dig.
+*/
+.main-nav .dropdown-menu {
+    display: none; /* <--- DENNE LINJE SKJULER MENUen */
+    position: absolute; /* Placerer menuen i forhold til .dropdown */
+    top: 100%; /* Lige under forældre-elementet */
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 8px 0;
+    list-style: none;
+    margin-top: 5px; /* Lidt luft mellem menu og dropdown */
+    z-index: 1000;
+}
+
+/* VIGTIGT: Viser KUN dropdown-menuen, når du holder musen 
+  over forældre-elementet (.dropdown).
+*/
+.main-nav .dropdown:hover .dropdown-menu {
+    display: block; /* <--- DENNE LINJE VISER MENUen IGEN */
+}
+
+/* Styling af links i dropdown-menuen */
+.main-nav .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap; /* Forhindrer tekstombrydning */
+}
+
+.main-nav .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Valgfri: Styling af den lille pil */
 .dropdown-icon {
     font-size: 0.7em;
-    margin-left: 5px;
-    transition: transform 0.3s ease;
+    margin-left: 4px;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Skjul dropdown-menuen som standard */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Placeres lige under menupunktet */
-    left: 0;
-    background-color: #ffffff; /* Hvid baggrund */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    min-width: 220px; /* Sæt en passende bredde */
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    z-index: 1000; /* Sikrer at den ligger oven på andet indhold */
-}
-
-/* Vis dropdown-menuen, når der hovers over forældre-elementet */
-.main-nav .dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Roterer pilen når menuen er åben */
 .main-nav .dropdown:hover .dropdown-icon {
     transform: rotate(180deg);
-}
-
-/* Styling for hvert link i dropdown-menuen */
-.dropdown-menu li a {
-    display: block;
-    padding: 12px 20px;
-    color: #333; /* Mørk tekstfarve */
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f4f4f4; /* Lys grå baggrund ved hover */
-    color: #000;
 }
