@@ -329,68 +329,249 @@ p {
 }
 
 
-/* ===== FOOTER ===== */
-.main-footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding-top: 60px;
+/* Generel styling for body for at se footeren ordentligt */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4; /* Baggrundsfarve for resten af siden */
 }
 
-.footer-container {
-    max-width: 1100px;
+/* Grundlæggende styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9; /* Eksempel på sidens baggrund */
+}
+
+/* Grundlæggende styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+/* --- Komplet Footer Styling --- */
+.site-footer-complete {
+    background-color: #1a1a2e; /* Mørk midnatsblå */
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-container-complete {
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
+    padding: 80px 24px 40px 24px;
 }
 
-.footer-info, .footer-links, .footer-social {
-    flex: 1;
-    min-width: 200px;
+/* Grid-system for kolonnerne */
+.footer-grid {
+    display: grid;
+    /* 4 kolonner på store skærme */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
 }
 
-.main-footer h4 {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--light-color);
-}
-
-.main-footer p, .main-footer a {
+/* Generel styling for indhold i kolonner */
+.footer-logo {
+    font-size: 26px;
+    font-weight: 700;
     color: #ffffff;
-    text-decoration: none;
-    font-weight: 300;
+    margin: 0 0 12px 0;
 }
 
-.footer-links ul {
+.footer-description {
+    margin: 0 0 24px 0;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.footer-heading-sub {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin: 0 0 12px 0;
+}
+
+.footer-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.footer-links li {
-    margin-bottom: 10px;
+.footer-list li {
+    padding-bottom: 8px;
 }
 
-.footer-links a:hover {
-    color: var(--primary-color);
+.footer-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
-.footer-social a {
-    font-size: 1.5em;
-    margin-right: 15px;
+.footer-list a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-.footer-social a:hover {
-    color: var(--primary-color);
+.footer-separator {
+    padding-top: 8px;
 }
 
-.footer-bottom {
+/* Sociale medier sektion */
+.footer-socials-wrapper {
+    margin-top: 32px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer-social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Bundlinje */
+.footer-bottom-complete {
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 1px solid #444;
+    padding-top: 60px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- RESPONSIVT DESIGN --- */
+@media (max-width: 1024px) {
+    .footer-grid {
+        /* 2 kolonner på tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        /* 1 kolonne på mobil */
+        grid-template-columns: 1fr;
+    }
+    .footer-container-complete {
+        padding-top: 60px;
+    }
+}
+/* --- RESPONSIVT DESIGN --- */
+
+/* For tablets og mindre skærme */
+@media (max-width: 992px) {
+    .footer-main {
+        /* Går fra 3 til 1 kolonne */
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* For mobiltelefoner */
+@media (max-width: 767px) {
+    .site-footer-new {
+        padding: 60px 0 30px 0;
+    }
+    .footer-main {
+        padding-bottom: 40px;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse; /* Sociale medier kommer øverst */
+        gap: 24px;
+    }
+}
+/* --- RESPONSIVT DESIGN --- */
+
+/* Tablet-størrelse (under 992px) */
+@media (max-width: 991.98px) {
+    .footer-container {
+        /* 2 kolonner på tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-brand .brand-slogan {
+        font-size: 32px;
+    }
+}
+
+/* Mobil-størrelse (under 768px) */
+@media (max-width: 767.98px) {
+    .site-footer {
+        padding: 60px 0 30px 0;
+    }
+
+    .footer-container {
+        /* 1 kolonne på mobil */
+        grid-template-columns: 1fr;
+        gap: 45px; /* Lidt mere lodret afstand */
+    }
+
+    .footer-brand .brand-slogan {
+        font-size: 28px;
+    }
+    
+    .footer-bottom {
+        margin-top: 45px;
+    }
+}
+/* --- Styling for Socials-sektionen --- */
+
+/* Giver plads til hele sektionen, hvis den er en del af et grid/flex layout */
+.footer-column.footer-socials {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for overskriften "Connect" */
+.footer-socials h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Fjerner default link-styling og tilføjer afstand mellem ikonerne */
+.footer-socials a {
+    text-decoration: none;
+    margin-right: 20px; /* Afstand mellem hvert ikon */
+}
+
+/* Sørger for at det sidste ikon ikke har unødvendig afstand til højre */
+.footer-socials a:last-child {
+    margin-right: 0;
+}
+
+/* Selve ikonerne (i-tag) */
+.footer-socials a i {
+    font-size: 24px; /* Ikonernes størrelse */
+    color: rgba(255, 255, 255, 0.85); /* Let gennemsigtig hvid */
+    transition: color 0.3s ease, transform 0.3s ease; /* Blød overgang ved hover */
+}
+
+/* Hover-effekt når musen er over et ikon */
+.footer-socials a:hover i {
+    color: #ffffff; /* Fuld hvid farve */
+    transform: translateY(-2px); /* Et lille løft for effekt */
 }
 
 
@@ -915,3 +1096,223 @@ p {
         justify-content: center;
     }
 }
+
+/* Grundlæggende styling og farvetema */
+:root {
+    --dark-gray: #2c3e50; /* Mørk grå/blå til tekst */
+    --light-gray: #f4f6f8; /* Lys grå til baggrund */
+    --purple: #8e44ad;      /* Primær lilla farve */
+    --purple-dark: #7b2c9f; /* Mørkere lilla til hover-effekter */
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Team sektion styling */
+.team-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+/* Grid-system for medarbejderkort */
+.team-grid {
+    display: grid;
+    /* Responsivt grid: Viser så mange kolonner som muligt med en min. bredde på 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Styling af hvert medarbejderkort */
+.team-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* Sørger for at billedet respekterer de runde hjørner */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Sikrer at billedet dækker området pænt */
+}
+
+.team-card-content {
+    padding: 24px;
+}
+
+.team-card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+}
+
+.team-card-content .title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.team-card-content .description {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Tilføj disse farver til din :root selector i toppen af din CSS */
+:root {
+    /* ... dine eksisterende farver ... */
+    --purple-dark: #a53de6; /* En dybere lilla */
+    --purple-light-bg: #ffffff; /* Meget lys lilla til baggrunde */
+}
+
+
+/* --- Kontakt Hero Sektion --- */
+.contact-hero {
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: var(--white);
+    padding: 80px 0;
+    overflow: hidden; /* Forhindrer SVG i at gå udenfor */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+}
+
+.hero-text-content h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    font-weight: 700;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Gør at knapperne kan gå under hinanden på små skærme */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px; /* Giver de afrundede kanter */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+.btn-light:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--purple);
+    transform: translateY(-2px);
+}
+
+.hero-hours {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    color: var(--white);
+    font-family: 'Arial', sans-serif;
+}
+
+.hero-image-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Du kan justere størrelsen på SVG'en her */
+.hero-image-content svg {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+}
+
+/* --- RESPONSIVT DESIGN FOR HERO SEKTION --- */
+@media (max-width: 992px) {
+    .hero-text-content h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr; /* Stabler kolonnerne oven på hinanden */
+        gap: 50px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    /* Skjuler illustration på de mindste skærme for at spare plads */
+    .hero-image-content {
+       display: none;
+    }
+}
+
