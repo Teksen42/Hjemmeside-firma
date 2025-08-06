@@ -70,6 +70,13 @@ p {
     margin: 0 auto; /* Top/bund margin er 0, venstre/højre er auto */
 }
 
+/* Styling af menupunkter */
+.main-nav ul li a {
+  font-size: 1.1rem;   /* Gør skriften lidt større. Prøv f.eks. 1rem, 1.2rem eller 18px */
+  font-weight: 600;    /* Gør skriften tykkere (normal er 400, fed er 700) */
+  letter-spacing: 0.5px; /* Giver en smule mere luft mellem bogstaverne (valgfrit) */
+  padding: 10px 15px;  /* Giver mere klikbart område og luft omkring teksten */
+}
 .main-nav ul {
     list-style: none;
     margin: 0;
@@ -646,6 +653,7 @@ p {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    
 }
 
 .logo {
@@ -1112,6 +1120,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.logo-image {
+  height: 60px; /* Juster tallet her for at gøre logoet større eller mindre */
+  width: auto;  /* Bevarer billedets proportioner */
 }
 
 /* Team sektion styling */
