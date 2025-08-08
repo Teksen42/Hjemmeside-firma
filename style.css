@@ -63,6 +63,7 @@ p {
     font-weight: 700;
     color: var(--dark-color);
     text-decoration: none;
+    margin-left: 200px; /* Tilføjet margin for at give lidt afstand til venstre */
 }
 
 /* ... din anden logo-styling er uændret ... */
