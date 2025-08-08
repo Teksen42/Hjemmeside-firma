@@ -1,0 +1,1381 @@
+/* ===== GENERELLE STYLES ===== */
+:root {
+    --primary-color: #9a04b8; /* Primær orange fra billedet */
+    --secondary-color: #580a77; /* Lidt lysere orange til gradients */
+    --dark-color: #212121;      /* Mørk tekstfarve */
+    --light-color: #FFFFFF;     /* Hvid baggrund og tekst */
+    --gray-color: #F5F5F5;      /* Let grå baggrund til sektioner */
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+p {
+    font-weight: 300;
+    color: #555;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+/* ===== HEADER & NAVIGATION (OPDATERET) ===== */
+.main-header {
+    background: var(--light-color);
+    padding: 15px 50px;
+    display: flex; /* Beholder flexbox for lodret centrering */
+    align-items: center; /* Centrerer elementerne lodret */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    /* Logo-styling er uændret */
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+/* ... din anden logo-styling er uændret ... */
+.logo-highlight {
+    color: var(--primary-color);
+}
+.logo-subtitle {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 300;
+    color: #777;
+    margin-top: -5px;
+}
+
+/* NYT: Denne regel centrerer navigationen */
+.main-nav {
+    margin: 0 auto; /* Top/bund margin er 0, venstre/højre er auto */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+/* ... resten af din CSS er uændret ... */
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary-color);
+}
+
+#mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+
+/* ===== KNAPPER ===== */
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.nav-button:hover {
+    background-color: #9d06f5;
+    color: var(--light-color);
+}
+
+.primary-button {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-button:hover {
+    background-color: #8807c4;
+    border-color: #63067a;
+}
+
+/* ===== HERO SEKTION ===== */
+#hero {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--light-color);
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--light-color);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* Styling for containeren der holder knapperne i hero-sektionen */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Gør at knapperne kan rykke under hinanden på små skærme */
+    gap: 20px; /* Mellemrum mellem knapperne */
+    margin-top: 30px;
+}
+
+/* Styling for den nye "ring nu" knap */
+.secondary-button {
+    background-color: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--light-color); /* Hvid kant */
+}
+
+.secondary-button:hover {
+    background-color: var(--light-color); /* Bliver hvid ved hover */
+    color: var(--primary-color); /* Teksten bliver orange ved hover */
+}
+
+/* Sørger for at ikoner i knapper har lidt plads */
+.button i {
+    margin-right: 8px;
+}
+
+/* ======================================================= */
+/* OPDATERET STYLING FOR SERVICESEKTION
+/* ======================================================= */
+
+#services {
+    padding: 100px 20px;
+    /* Let lyserød/beige baggrundsfarve fra billedet */
+    background-color: #f5f5f5; 
+}
+
+/* Header-sektionen i toppen */
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.services-header .subtitle {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.services-header h2 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.services-header p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Gitteret der holder på kortene */
+.service-grid {
+    display: grid;
+    /* Opretter 3 kolonner på store skærme, 2 på tablets og 1 på mobil */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Selve kort-designet */
+.service-card {
+    background-color: var(--light-color);
+    border: 1px solid #9607e9;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Vigtigt for at placere knappen i bunden */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+}
+
+/* Billedet i toppen af kortet */
+.card-image {
+    width: 100%;
+    height: 180px; /* Giver alle billeder en ens højde */
+    object-fit: contain; /* Sikrer at billedet ikke strækkes */
+    margin-bottom: 25px;
+}
+
+/* Overskriften på kortet */
+.service-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+/* Brødteksten på kortet */
+.service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #7309ec;
+    flex-grow: 1; /* Skubber knappen ned i bunden */
+}
+
+/* Knappen på kortet */
+.card-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px; /* Gør knappen pille-formet */
+    font-weight: 600;
+    color: var(--light-color);
+    text-align: center;
+    margin-top: 20px; /* Afstand til teksten over */
+    
+    /* Gradient baggrund fra billedet */
+    background: linear-gradient(90deg, #5c04eb, #5503b3);
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+    color: var(--light-color);
+}
+
+
+/* ===== CTA SEKTION ===== */
+#cta {
+    background-color: var(--gray-color);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 2.2em;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+
+/* Generel styling for body for at se footeren ordentligt */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4; /* Baggrundsfarve for resten af siden */
+}
+
+/* Grundlæggende styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9; /* Eksempel på sidens baggrund */
+}
+
+/* Grundlæggende styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+/* --- Komplet Footer Styling --- */
+.site-footer-complete {
+    background-color: #1a1a2e; /* Mørk midnatsblå */
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-container-complete {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 24px 40px 24px;
+}
+
+/* Grid-system for kolonnerne */
+.footer-grid {
+    display: grid;
+    /* 4 kolonner på store skærme */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+
+/* Generel styling for indhold i kolonner */
+.footer-logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+}
+
+.footer-description {
+    margin: 0 0 24px 0;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.footer-heading-sub {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin: 0 0 12px 0;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    padding-bottom: 8px;
+}
+
+.footer-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-list a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-separator {
+    padding-top: 8px;
+}
+
+/* Sociale medier sektion */
+.footer-socials-wrapper {
+    margin-top: 32px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer-social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Bundlinje */
+.footer-bottom-complete {
+    text-align: center;
+    padding-top: 60px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- RESPONSIVT DESIGN --- */
+@media (max-width: 1024px) {
+    .footer-grid {
+        /* 2 kolonner på tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        /* 1 kolonne på mobil */
+        grid-template-columns: 1fr;
+    }
+    .footer-container-complete {
+        padding-top: 60px;
+    }
+}
+/* --- RESPONSIVT DESIGN --- */
+
+/* For tablets og mindre skærme */
+@media (max-width: 992px) {
+    .footer-main {
+        /* Går fra 3 til 1 kolonne */
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* For mobiltelefoner */
+@media (max-width: 767px) {
+    .site-footer-new {
+        padding: 60px 0 30px 0;
+    }
+    .footer-main {
+        padding-bottom: 40px;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse; /* Sociale medier kommer øverst */
+        gap: 24px;
+    }
+}
+/* --- RESPONSIVT DESIGN --- */
+
+/* Tablet-størrelse (under 992px) */
+@media (max-width: 991.98px) {
+    .footer-container {
+        /* 2 kolonner på tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-brand .brand-slogan {
+        font-size: 32px;
+    }
+}
+
+/* Mobil-størrelse (under 768px) */
+@media (max-width: 767.98px) {
+    .site-footer {
+        padding: 60px 0 30px 0;
+    }
+
+    .footer-container {
+        /* 1 kolonne på mobil */
+        grid-template-columns: 1fr;
+        gap: 45px; /* Lidt mere lodret afstand */
+    }
+
+    .footer-brand .brand-slogan {
+        font-size: 28px;
+    }
+    
+    .footer-bottom {
+        margin-top: 45px;
+    }
+}
+/* --- Styling for Socials-sektionen --- */
+
+/* Giver plads til hele sektionen, hvis den er en del af et grid/flex layout */
+.footer-column.footer-socials {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for overskriften "Connect" */
+.footer-socials h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Fjerner default link-styling og tilføjer afstand mellem ikonerne */
+.footer-socials a {
+    text-decoration: none;
+    margin-right: 20px; /* Afstand mellem hvert ikon */
+}
+
+/* Sørger for at det sidste ikon ikke har unødvendig afstand til højre */
+.footer-socials a:last-child {
+    margin-right: 0;
+}
+
+/* Selve ikonerne (i-tag) */
+.footer-socials a i {
+    font-size: 24px; /* Ikonernes størrelse */
+    color: rgba(255, 255, 255, 0.85); /* Let gennemsigtig hvid */
+    transition: color 0.3s ease, transform 0.3s ease; /* Blød overgang ved hover */
+}
+
+/* Hover-effekt når musen er over et ikon */
+.footer-socials a:hover i {
+    color: #ffffff; /* Fuld hvid farve */
+    transform: translateY(-2px); /* Et lille løft for effekt */
+}
+
+
+/* ===== RESPONSIVT DESIGN (MOBIL) ===== */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    
+    .main-nav ul {
+        display: none; /* Skjul menu på mobil */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Højden på header */
+        left: 0;
+        background-color: var(--light-color);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Vis menu når den er aktiv */
+    }
+    
+    .main-nav li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    #mobile-menu-toggle {
+        display: block; /* Vis hamburger-ikon */
+    }
+
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+}
+
+/* ===== GENERELLE STYLES ===== */
+:root {
+    --primary-color: #9f1df5;
+    --secondary-color: #7f0aec;
+    --dark-color: #212121;
+    --light-color: #FFFFFF;
+    --gray-color: #F5F5F5;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+p {
+    font-weight: 300;
+    color: #555;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.main-header {
+    background: var(--light-color);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 300;
+    color: #777;
+    margin-top: -5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary-color);
+}
+
+#mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+/* ===== KNAPPER ===== */
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.nav-button:hover {
+    background-color: #bb07f1;
+    color: var(--light-color) !important;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-info, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-footer h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.main-footer p, .main-footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social a {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+}
+
+/* ===== KONTAKTSIDE STYLING ===== */
+#contact-page {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-header h1 {
+    font-size: 2.8em;
+}
+
+.contact-header .section-intro {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info h3 {
+    color: var(--light-color);
+    font-size: 1.8em;
+}
+
+.contact-info p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info address {
+    font-style: normal;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1em;
+    transition: opacity 0.3s ease;
+}
+
+.contact-item:hover {
+    opacity: 0.8;
+}
+
+.contact-item i {
+    font-size: 1.2em;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.social-media-contact {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-media-contact h4 {
+    color: var(--light-color);
+}
+
+.social-media-contact a {
+    color: var(--light-color);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.contact-form-container {
+    flex: 2;
+    min-width: 300px;
+    padding: 40px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.form-group .required {
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.2);
+}
+
+.button-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-submit:hover {
+    background-color: #6c07f1;
+}
+
+.form-note {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* ===== RESPONSIVT DESIGN ===== */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: var(--light-color);
+    }
+    .main-nav ul.active {
+        display: flex;
+    }
+    .main-nav li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    #mobile-menu-toggle {
+        display: block;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .contact-header h1 {
+        font-size: 2.2em;
+    }
+    #contact-page {
+        margin: 40px auto;
+    }
+}
+
+/* ======================================================= */
+/* STYLING FOR FILOSOFI SEKTION
+/* ======================================================= */
+
+#philosophy {
+    padding: 100px 20px;
+    background-color: #f9f9f9; /* En let grå baggrund for at skabe kontrast */
+    overflow: hidden; /* For at undgå vandret scrollbar */
+}
+
+/* En genbrugelig container-klasse for at centrere indhold */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.philosophy-content {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Mellemrum mellem tekst og billede */
+}
+
+.philosophy-text {
+    flex: 1; /* Tekst-kolonnen tager 1 del af pladsen */
+    min-width: 300px;
+}
+
+.philosophy-image {
+    flex: 1; /* Billede-kolonnen tager 1 del af pladsen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.philosophy-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Typografi styling for sektionen */
+.philosophy-text .subtitle {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.philosophy-text h2 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.philosophy-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+}
+
+.philosophy-text .highlight {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-top: 20px;
+}
+
+/* Styling af knapperne i sektionen */
+.philosophy-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ny knap-stil til sektioner med lys baggrund */
+.secondary-button-dark {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid #ddd;
+    font-weight: 600;
+}
+
+.secondary-button-dark:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+
+/* Responsivt design for mindre skærme */
+@media (max-width: 900px) {
+    .philosophy-content {
+        flex-direction: column-reverse; /* Placerer billedet øverst på mobil */
+        text-align: center;
+    }
+
+    .philosophy-buttons {
+        justify-content: center;
+    }
+}
+
+/* Grundlæggende styling og farvetema */
+:root {
+    --dark-gray: #2c3e50; /* Mørk grå/blå til tekst */
+    --light-gray: #f4f6f8; /* Lys grå til baggrund */
+    --purple: #8e44ad;      /* Primær lilla farve */
+    --purple-dark: #7b2c9f; /* Mørkere lilla til hover-effekter */
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Team sektion styling */
+.team-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+/* Grid-system for medarbejderkort */
+.team-grid {
+    display: grid;
+    /* Responsivt grid: Viser så mange kolonner som muligt med en min. bredde på 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Styling af hvert medarbejderkort */
+.team-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* Sørger for at billedet respekterer de runde hjørner */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Sikrer at billedet dækker området pænt */
+}
+
+.team-card-content {
+    padding: 24px;
+}
+
+.team-card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+}
+
+.team-card-content .title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.team-card-content .description {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Tilføj disse farver til din :root selector i toppen af din CSS */
+:root {
+    /* ... dine eksisterende farver ... */
+    --purple-dark: #9d04f5; /* En dybere lilla */
+    --purple-light-bg: #ffffff; /* Meget lys lilla til baggrunde */
+}
+
+
+/* --- Kontakt Hero Sektion --- */
+.contact-hero {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 80px 0;
+    overflow: hidden; /* Forhindrer SVG i at gå udenfor */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+}
+
+.hero-text-content h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    font-weight: 700;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Gør at knapperne kan gå under hinanden på små skærme */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px; /* Giver de afrundede kanter */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+.btn-light:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--purple);
+    transform: translateY(-2px);
+}
+
+.hero-hours {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    color: var(--white);
+    font-family: 'Arial', sans-serif;
+}
+
+.hero-image-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Du kan justere størrelsen på SVG'en her */
+.hero-image-content svg {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+}
+
+/* --- RESPONSIVT DESIGN FOR HERO SEKTION --- */
+@media (max-width: 992px) {
+    .hero-text-content h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr; /* Stabler kolonnerne oven på hinanden */
+        gap: 50px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    /* Skjuler illustration på de mindste skærme for at spare plads */
+    .hero-image-content {
+       display: none;
+    }
+}
+
+/* ================================== */
+/* === DROPDOWN MENU - KORREKT KODE === */
+/* ================================== */
+
+/* Gør det muligt at positionere dropdown-menuen korrekt */
+.main-nav .dropdown {
+    position: relative;
+    padding-bottom: 10px; /* Giver lidt plads til dropdown-menuen */
+}
+
+/* VIGTIGT: Skjuler dropdown-menuen som standard. 
+  Dette er den regel, der sandsynligvis mangler hos dig.
+*/
+.main-nav .dropdown-menu {
+    display: none; /* <--- DENNE LINJE SKJULER MENUen */
+    position: absolute; /* Placerer menuen i forhold til .dropdown */
+    top: 100%; /* Lige under forældre-elementet */
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 8px 0;
+    list-style: none;
+    margin-top: 0 px;      /* <--- SLET ELLER SÆT TIL 0 */
+    padding-top: 15px;  /* <--- TILFØJ DENNE USYNLIGE BRO */    
+    z-index: 1000;
+   
+}
+
+/* VIGTIGT: Viser KUN dropdown-menuen, når du holder musen 
+  over forældre-elementet (.dropdown).
+*/
+.main-nav .dropdown:hover .dropdown-menu {
+    display: block; /* <--- DENNE LINJE VISER MENUen IGEN */
+}
+
+/* Styling af links i dropdown-menuen */
+.main-nav .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap; /* Forhindrer tekstombrydning */
+    text-align: left
+}
+
+.main-nav .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Valgfri: Styling af den lille pil */
+.dropdown-icon {
+    font-size: 0.7em;
+    margin-left: 4px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.main-nav .dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
