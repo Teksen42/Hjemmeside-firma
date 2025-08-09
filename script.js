@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-ddocument.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // --- Mobilmenu Toggle ---
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav'); // Vi arbejder på hele nav-elementet
@@ -140,3 +140,5 @@ ddocument.addEventListener('DOMContentLoaded', function () {
             mainNav.classList.toggle('is-open');
         });
     }
+
+    
