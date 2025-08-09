@@ -91,38 +91,26 @@ p {
   padding: 10px 15px;  /* Giver mere klikbart område og luft omkring teksten */
 }
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Samme afstand som før */
 }
 
 .main-nav li {
-    margin-left: 25px;
+  list-style: none;
 }
 
-/* ... resten af din CSS er uændret ... */
 .main-nav a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 400;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--dark-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 15px;
 }
 
-.main-nav a.active, .main-nav a:hover {
-    color: var(--primary-color);
+.main-nav a:hover {
+  color: var(--primary-color);
 }
-
-#mobile-menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--dark-color);
-    cursor: pointer;
-}
-
 
 /* ===== KNAPPER ===== */
 .button {
@@ -472,83 +460,6 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* --- RESPONSIVT DESIGN --- */
-@media (max-width: 1024px) {
-    .footer-grid {
-        /* 2 kolonner på tablets */
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .footer-grid {
-        /* 1 kolonne på mobil */
-        grid-template-columns: 1fr;
-    }
-    .footer-container-complete {
-        padding-top: 60px;
-    }
-}
-/* --- RESPONSIVT DESIGN --- */
-
-/* For tablets og mindre skærme */
-@media (max-width: 992px) {
-    .footer-main {
-        /* Går fra 3 til 1 kolonne */
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
-
-/* For mobiltelefoner */
-@media (max-width: 767px) {
-    .site-footer-new {
-        padding: 60px 0 30px 0;
-    }
-    .footer-main {
-        padding-bottom: 40px;
-    }
-    .footer-bottom {
-        flex-direction: column-reverse; /* Sociale medier kommer øverst */
-        gap: 24px;
-    }
-}
-/* --- RESPONSIVT DESIGN --- */
-
-/* Tablet-størrelse (under 992px) */
-@media (max-width: 991.98px) {
-    .footer-container {
-        /* 2 kolonner på tablets */
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-brand .brand-slogan {
-        font-size: 32px;
-    }
-}
-
-/* Mobil-størrelse (under 768px) */
-@media (max-width: 767.98px) {
-    .site-footer {
-        padding: 60px 0 30px 0;
-    }
-
-    .footer-container {
-        /* 1 kolonne på mobil */
-        grid-template-columns: 1fr;
-        gap: 45px; /* Lidt mere lodret afstand */
-    }
-
-    .footer-brand .brand-slogan {
-        font-size: 28px;
-    }
-    
-    .footer-bottom {
-        margin-top: 45px;
-    }
-}
-/* --- Styling for Socials-sektionen --- */
-
 /* Giver plads til hele sektionen, hvis den er en del af et grid/flex layout */
 .footer-column.footer-socials {
     display: flex;
@@ -588,45 +499,6 @@ body {
 .footer-socials a:hover i {
     color: #ffffff; /* Fuld hvid farve */
     transform: translateY(-2px); /* Et lille løft for effekt */
-}
-
-
-/* ===== RESPONSIVT DESIGN (MOBIL) ===== */
-@media (max-width: 768px) {
-    .main-header {
-    padding: 15px 15%;    }
-    
-    .main-nav ul {
-        display: none; /* Skjul menu på mobil */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px; /* Højden på header */
-        left: 0;
-        background-color: var(--light-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .main-nav ul.active {
-        display: flex; /* Vis menu når den er aktiv */
-    }
-    
-    .main-nav li {
-        margin: 15px 0;
-        text-align: center;
-    }
-    
-    #mobile-menu-toggle {
-        display: block; /* Vis hamburger-ikon */
-    }
-
-    #hero h1 {
-        font-size: 2.5em;
-    }
-
-    #hero p {
-        font-size: 1em;
-    }
 }
 
 /* ===== GENERELLE STYLES ===== */
@@ -962,48 +834,6 @@ p {
     text-align: right;
 }
 
-/* ===== RESPONSIVT DESIGN ===== */
-@media (max-width: 900px) {
-    .contact-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 15px 20px;
-    }
-    .main-nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: var(--light-color);
-    }
-    .main-nav ul.active {
-        display: flex;
-    }
-    .main-nav li {
-        margin: 15px 0;
-        text-align: center;
-    }
-    #mobile-menu-toggle {
-        display: block;
-    }
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    .contact-header h1 {
-        font-size: 2.2em;
-    }
-    #contact-page {
-        margin: 40px auto;
-    }
-}
-
 /* ======================================================= */
 /* STYLING FOR FILOSOFI SEKTION
 /* ======================================================= */
@@ -1095,19 +925,6 @@ p {
     background-color: var(--dark-color);
     border-color: var(--dark-color);
     color: var(--light-color);
-}
-
-
-/* Responsivt design for mindre skærme */
-@media (max-width: 900px) {
-    .philosophy-content {
-        flex-direction: column-reverse; /* Placerer billedet øverst på mobil */
-        text-align: center;
-    }
-
-    .philosophy-buttons {
-        justify-content: center;
-    }
 }
 
 /* Grundlæggende styling og farvetema */
@@ -1318,35 +1135,6 @@ body {
     height: auto;
 }
 
-/* --- RESPONSIVT DESIGN FOR HERO SEKTION --- */
-@media (max-width: 992px) {
-    .hero-text-content h2 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .contact-hero {
-        padding: 60px 0;
-        text-align: center;
-    }
-    .hero-grid {
-        grid-template-columns: 1fr; /* Stabler kolonnerne oven på hinanden */
-        gap: 50px;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    /* Skjuler illustration på de mindste skærme for at spare plads */
-    .hero-image-content {
-       display: none;
-    }
-}
-
-/* ================================== */
-/* === DROPDOWN MENU - KORREKT KODE === */
-/* ================================== */
-
 /* Gør det muligt at positionere dropdown-menuen korrekt */
 .main-nav .dropdown {
     position: relative;
@@ -1405,20 +1193,119 @@ body {
     transform: rotate(180deg);
 }
 
-/* Eksempel på CSS der virker med den nye JavaScript */
-@media (max-width: 768px) {
-    /* Skjul menuen som standard */
-    .main-nav > ul {
-        display: none;
+/* ========================================================= */
+/* ===== PROFESSIONEL & ROBUST MOBIL-NAVIGATION (FIXED) ===== */
+/* ========================================================= */
+
+/* Gælder for skærme under 992px */
+@media (max-width: 992px) {
+
+    /* --- 1. Generel Header Opsætning --- */
+    .main-header {
+        padding: 10px 15px;
     }
 
-    /* VIS menuen når <nav> har klassen 'is-active' */
-    .main-nav.is-active > ul {
-        display: block; /* Eller 'flex' hvis du vil style den yderligere */
+    .header-container {
+        position: relative; /* Nødvendig for at centrere knappen perfekt */
+        display: flex;
+        justify-content: space-between; /* Holder logo og hamburger i hver sin side */
+        align-items: center;
+        width: 100%;
     }
 
-    /* Vis hamburger-ikonet */
+    /* --- 2. RETTELSEN: Nulstil logo og skjul desktop-menu --- */
+    .header-container .logo {
+        margin-left: 0 !important; /* VIGTIGT: Fjerner desktop-marginen med tvang */
+    }
+
+    .main-nav {
+        display: none; /* Skjul den almindelige menu */
+    }
+
+    /* --- 3. Styling af de synlige mobil-elementer --- */
+    
+    /* Perfekt centrering af kontakt-knappen */
+    #mobile-contact-button {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); /* Den præcise centreringsteknik */
+    }
+     #mobile-contact-button:hover {
+        background-color: var(--secondary-color);
+    }
+
+    /* Hamburger-ikonet til højre */
     #mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 28px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10; /* Sikrer at den kan klikkes, hvis den overlapper knappen */
+    }
+
+    #mobile-menu-toggle .icon-bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--dark-color);
+        border-radius: 2px;
+    }
+
+    /* --- 4. Styling af den UDFOLDEDE mobilmenu --- */
+    .main-nav.is-open {
         display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--light-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+        z-index: 999;
+    }
+
+    .main-nav.is-open ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav.is-open li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--gray-color);
+    }
+    
+    .main-nav.is-open li a {
+        display: block;
+        padding: 20px;
+    }
+    
+    .main-nav.is-open .dropdown-menu,
+    .main-nav.is-open .dropdown-icon {
+        display: none !important;
     }
 }
+
+/* --- 5. Skjul mobil-elementer på Desktop --- */
+@media (min-width: 993px) {
+    #mobile-menu-toggle,
+    #mobile-contact-button {
+        display: none;
+    }
+}
+
+
