@@ -63,7 +63,6 @@ p {
     font-weight: 700;
     color: var(--dark-color);
     text-decoration: none;
-    margin-left: 200px; /* Tilføjet margin for at give lidt afstand til venstre */
 }
 
 /* ... din anden logo-styling er uændret ... */
@@ -540,12 +539,7 @@ p {
     /* De 3 'flex' linjer er fjernet herfra */
 }
 
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--dark-color);
-    text-decoration: none;
-}
+
 
 .logo-subtitle {
     display: block;
@@ -1135,53 +1129,53 @@ body {
     height: auto;
 }
 
-/* Gør det muligt at positionere dropdown-menuen korrekt */
+/* Gør det muligt at positionere dropdown-menuen korrekt i forhold til sit menupunkt */
 .main-nav .dropdown {
     position: relative;
-    padding-bottom: 10px; /* Giver lidt plads til dropdown-menuen */
 }
 
-/* VIGTIGT: Skjuler dropdown-menuen som standard. 
-  Dette er den regel, der sandsynligvis mangler hos dig.
-*/
+/* Skjuler dropdown-menuen som standard på alle skærme */
 .main-nav .dropdown-menu {
-    display: none; /* <--- DENNE LINJE SKJULER MENUen */
-    position: absolute; /* Placerer menuen i forhold til .dropdown */
-    top: 100%; /* Lige under forældre-elementet */
+    display: none;
+    position: absolute; /* Placerer menuen frit, men i forhold til .dropdown */
+    top: 100%;       /* Starter lige under hovedmenupunktet */
     left: 0;
     background-color: white;
-    min-width: 220px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 220px; /* Giver den en god bredde */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Flot skygge */
     border-radius: 8px;
-    padding: 8px 0;
-    list-style: none;
-    margin-top: 0 px;      /* <--- SLET ELLER SÆT TIL 0 */
-    padding-top: 15px;  /* <--- TILFØJ DENNE USYNLIGE BRO */    
-    z-index: 1000;
-   
+    padding: 10px 0;
+    margin-top: 5px; /* Lille mellemrum for et pænere look */
+    z-index: 1100;   /* Sikrer den ligger oven på andet indhold */
+    list-style: none; /* Fjerner prikker fra listen */
 }
+
 
 /* VIGTIGT: Viser KUN dropdown-menuen, når du holder musen 
   over forældre-elementet (.dropdown).
 */
-.main-nav .dropdown:hover .dropdown-menu {
-    display: block; /* <--- DENNE LINJE VISER MENUen IGEN */
+@media (min-width: 769px) {
+    .main-nav .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
 }
 
 /* Styling af links i dropdown-menuen */
 .main-nav .dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    font-size: 0.95rem; /* Lidt mindre skrift end hovedmenuen */
+    font-weight: 400;
     color: #333;
-    text-decoration: none;
-    white-space: nowrap; /* Forhindrer tekstombrydning */
+    display: block; /* Sørger for at hele området er klikbart */
     text-align: left;
+    white-space: nowrap; /* Forhindrer tekst i at knække over */
 }
 
+/* Hover-effekt inde i selve dropdown-menuen */
 .main-nav .dropdown-menu li a:hover {
     background-color: #f5f5f5;
+    color: var(--primary-color);
 }
-
 /* Valgfri: Styling af den lille pil */
 .dropdown-icon {
     font-size: 0.7em;
@@ -1254,25 +1248,119 @@ body {
 }
 
 
-/* --- MOBILTELEFONER (under 768px) --- */
-@media (max-width: 768px) {
+/* ======================================================= */
+/* ===== RESPONSIVT DESIGN - MOBIL (UNDER 768PX)      ===== */
+/* ======================================================= */
+@media (max-width: 769px) {
 
-    /* -- Header & Navigation -- */
-    .main-header {
-        padding: 15px 20px; /* Samlet og forsimplet padding */
+    /* --- Generel Layout på mobil --- */
+    #hero h1 { font-size: 2.5em; }
+    #hero p { font-size: 1em; }
+    .philosophy-content { flex-direction: column-reverse; text-align: center; }
+    .philosophy-buttons { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; gap: 0; }
+    .header-container { width: 90%; /* Giver lidt mere luft i siderne */ }
+
+    /* --- Burger-knap Styling --- */
+    #mobile-menu-toggle {
+        display: block; /* Viser knappen */
+        z-index: 1100;  /* Sikrer at den altid er øverst */
+        position: relative;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        background: none;
+        border: none;
     }
 
-    .main-nav > ul {
-        display: none; /* Skjuler menuen som standard */
-        flex-direction: column;
+    .icon-bar {
+        display: block;
         width: 100%;
+        height: 3px;
+        background-color: var(--dark-color);
         position: absolute;
-        top: 70px;
         left: 0;
-        background-color: var(--light-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .icon-bar:nth-child(1) { top: 0; }
+    .icon-bar:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .icon-bar:nth-child(3) { bottom: 0; }
+
+    /* --- Mobilmenuen (den der folder ud) --- */
+    .main-nav {
+        position: fixed; /* Låser menuen til skærmen */
+        top: 0;
+        left: -100%; /* Starter skjult uden for skærmen */
+        width: 100%;
+        height: 100vh; /* Fyld hele højden */
+        background-color: white;
+        transition: left 0.3s ease-in-out; /* Blød animation */
+        z-index: 1050;
+        padding-top: 80px;
+    }
+
+    .main-nav.is-active {
+        left: 0; /* Kører menuen ind fra venstre */
+    }
+
+    /* Roterer burger-knap til et 'X' når menuen er aktiv */
+    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(2) { opacity: 0; }
+    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
     
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 10px;
+        display: flex; /* Gør det nemt at justere indhold */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Pilen ved siden af dropdowns */
+    .dropdown-icon {
+        font-size: 1rem;
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Skjul under-menu som standard */
+.dropdown-menu {
+    display: none;
+    position: static; /* Nulstiller desktop-positionering */
+    background: #f9f9f9;
+    box-shadow: none;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+    .dropdown-menu li a {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    /* Vis under-menu når forælderen er åben */
+    .dropdown.is-open > .dropdown-menu {
+        display: block;
+    }
+
+.dropdown.is-open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
     /* Viser menuen når den er aktiv */
     .main-nav.is-active > ul {
         display: flex; 
@@ -1457,5 +1545,11 @@ body {
     
     .main-nav .dropdown-icon {
         display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-nav .dropdown:hover > .dropdown-menu {
+        display: block; /* VIGTIGT for desktop-hover */
     }
 }
