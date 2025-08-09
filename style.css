@@ -333,6 +333,9 @@ p {
     background-color: var(--gray-color);
     padding: 80px 20px;
     text-align: center;
+    margin-bottom: 80px;
+    margin-top: -10px
+
 }
 
 #cta h2 {
@@ -1384,7 +1387,7 @@ body {
     color: #333;
     text-decoration: none;
     white-space: nowrap; /* Forhindrer tekstombrydning */
-    text-align: left
+    text-align: left;
 }
 
 .main-nav .dropdown-menu li a:hover {
