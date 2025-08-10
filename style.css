@@ -997,7 +997,7 @@ body {
 
 .team-card-img {
     width: 100%;
-    height: 300px;
+    height: 600px;
     object-fit: cover; /* Sikrer at billedet dækker området pænt */
 }
 
@@ -1609,4 +1609,124 @@ body {
     .main-nav.menu-open {
         display: block;
     }
+}
+/* ======================================================= */
+/* ===== TEAM-DESIGN m. JUSTERET AFSTAND (v7)        ===== */
+/* ======================================================= */
+
+.team-section {
+    padding: 80px 20px 80px 20px; /* ÆNDRING: Afstand til toppen er reduceret fra 150px */
+    background-color: #f9fafb;
+}
+
+.team-section .container h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.team-section .section-intro {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px auto; /* ÆNDRING: Afstand til kortene er reduceret fra 110px */
+    color: #6b7280;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 5rem;
+}
+
+/* Selve kortet */
+.team-card-new {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    margin-top: 100px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.team-card-new:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Den runde billed-container */
+.team-card-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: -100px auto 20px auto;
+    border: 7px solid #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 2;
+    background-color: #e0e0e0;
+}
+
+.team-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+}
+
+/* Indholdet (tekst) */
+.team-card-content {
+    flex-grow: 1;
+}
+
+.team-card-name {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0 0 5px 0;
+}
+
+.team-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0 0 15px 0;
+}
+
+.team-card-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Kontakt-sektionen i bunden */
+.team-card-contact {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.contact-icon {
+    color: #9ca3af;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
 }

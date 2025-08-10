@@ -8,53 +8,48 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Ledende Udvikler',
             description: 'Mirsad har erfaring inden for branchen og leder firmaet med en klar vision for fremtiden.',
             email: 'Mucco2635@gmail.com',
-            phone: '+4593832610' // Erstat med rigtigt telefonnummer
-        },
-        {
-            image: 'photo/IMG_0504.png',
-            name: 'Muhammed Celik',
-            title: 'Marketingchef',
-            description: 'Muhammed er en kreativ strateg, der brænder for at skabe kampagner, der engagerer og konverterer.',
-            email: 'muhammedclk2635@gmail.com',
-            phone: '+4542372113' // Erstat med rigtigt telefonnummer
+            phone: '+4593832610'
         },
         {
             image: 'photo/IMG_0502.png',
             name: 'Yasir Teksen',
             title: 'Administrerende Direktør',
             description: 'Yasir er hjernen bag vores tekniske løsninger og sikrer, at vores produkter altid er i topkvalitet.',
-            email: 'yasirteksen@hotmail.com ',
-            phone: '+4561708150' // Erstat med rigtigt telefonnummer
+            email: 'yasirteksen@hotmail.com',
+            phone: '+4561708150'
         },
     ];
     // ===============================================
 
     const teamGrid = document.getElementById('team-grid');
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNavUl = document.querySelector('.main-nav ul');
-    const currentYearSpan = document.getElementById('current-year');
 
-    // Funktion til at vise medarbejderne på siden
     function displayTeamMembers() {
-        if (!teamGrid) return; // Stop hvis team-grid ikke findes
+        if (!teamGrid) return;
         
         teamGrid.innerHTML = ''; // Tømmer gridden
 
         teamMembers.forEach(member => {
             const card = document.createElement('div');
-            card.classList.add('team-card');
+            // Vi bruger stadig 'team-card-new' som container, men indholdet er nyt
+            card.classList.add('team-card-new'); 
 
+            // HELT NY STRUKTUR for et design med rundt billede
             card.innerHTML = `
-                <img src="${member.image}" alt="Billede af ${member.name}" class="team-card-img">
+                <div class="team-card-avatar">
+                    <img src="${member.image}" alt="Portræt af ${member.name}">
+                </div>
                 <div class="team-card-content">
-                    <h3>${member.name}</h3>
-                    <span class="title">${member.title}</span>
-                    <p class="description">${member.description}</p>
-                    
-                    <div class="team-card-contact">
-                        <a href="mailto:${member.email}" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
-                        <a href="tel:${member.phone}" class="contact-link"><i class="fas fa-phone"></i> Ring</a>
-                    </div>
+                    <h3 class="team-card-name">${member.name}</h3>
+                    <p class="team-card-title">${member.title}</p>
+                    <p class="team-card-description">${member.description}</p>
+                </div>
+                <div class="team-card-contact">
+                    <a href="mailto:${member.email}" class="contact-icon" aria-label="Send email til ${member.name}">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:${member.phone}" class="contact-icon" aria-label="Ring til ${member.name}">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             `;
 
@@ -62,17 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Kald funktionen for at bygge team-sektionen
     displayTeamMembers();
 
-    // Mobilmenu toggle
+    // Mobilmenu og andre scripts...
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
-            mainNavUl.classList.toggle('active');
+            mainNav.classList.toggle('is-active');
         });
     }
-    
-    // Opdater årstal i footer
+
+    const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
