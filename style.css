@@ -1200,10 +1200,10 @@ body {
 
 /* --- STORE TABLETS & SMÅ LAPTOPS (under 1024px) --- */
 @media (max-width: 1024px) {
-    .footer-grid {
-        /* Går fra 2*fyld-bredde til 2*auto-bredde, så centreringen bevares */
-        grid-template-columns: repeat(2, auto);
-}
+    .footer-grid {
+        /* Går fra 2*fyld-bredde til 2*auto-bredde, så centreringen bevares */
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 
@@ -1555,5 +1555,58 @@ body {
 @media (min-width: 769px) {
     .main-nav .dropdown:hover > .dropdown-menu {
         display: block; /* VIGTIGT for desktop-hover */
+    }
+}
+
+/* Grundlæggende styling for knappen (kan du tilpasse) */
+#mobile-menu-toggle {
+    display: none; /* Skjult som standard */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#mobile-menu-toggle .icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+/* Media Query: Gælder kun for skærme under f.eks. 768px */
+@media (max-width: 768px) {
+    /* Vis burger-knappen */
+    #mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Skjul navigationen som udgangspunkt */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%; /* Lige under headeren */
+        left: 0;
+        width: 100%;
+        background-color: white; /* Giv den en baggrund */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Gør undermenuer synlige i mobil-layout */
+    .main-nav ul {
+        flex-direction: column; /* Sæt menupunkter under hinanden */
+    }
+
+    .main-nav .dropdown-menu {
+        position: static; /* Ophæv dropdown-effekt på mobil */
+        display: block; /* Sørg for at undermenuen er synlig */
+        border: none;
+        box-shadow: none;
+        background-color: #f9f9f9; /* Lidt anden farve for at adskille */
+    }
+
+    /* VIS menuen, når den har klassen 'menu-open' */
+    .main-nav.menu-open {
+        display: block;
     }
 }
