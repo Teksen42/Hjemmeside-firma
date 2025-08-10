@@ -370,9 +370,12 @@ body {
 /* Grid-system for kolonnerne */
 .footer-grid {
     display: grid;
-    /* 4 kolonner på store skærme */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
+    /* Fortæller kolonnerne, at de skal tilpasse deres bredde efter indholdet */
+    grid-template-columns: repeat(4, auto); 
+    /* Centrerer hele gruppen af kolonner i midten */
+    justify-content: center;
+    /* Juster evt. mellemrummet */
+    gap: 60px;
 }
 
 /* Generel styling for indhold i kolonner */
@@ -1197,10 +1200,10 @@ body {
 
 /* --- STORE TABLETS & SMÅ LAPTOPS (under 1024px) --- */
 @media (max-width: 1024px) {
-    .footer-grid {
-        /* Går fra 4 til 2 kolonner */
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .footer-grid {
+        /* Går fra 2*fyld-bredde til 2*auto-bredde, så centreringen bevares */
+        grid-template-columns: repeat(2, auto);
+}
 }
 
 
@@ -1419,6 +1422,7 @@ body {
     .footer-container {
         grid-template-columns: 1fr; /* Altid 1 kolonne på mobil */
         gap: 45px;
+        
     }
 
     .footer-container-complete,
