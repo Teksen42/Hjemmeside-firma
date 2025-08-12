@@ -158,3 +158,48 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    const dropdowns = document.querySelectorAll('.main-nav .dropdown > a');
+
+    // Funktion til at åbne/lukke hovedmenuen
+    menuToggle.addEventListener('click', function() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('nav-open');
+    });
+
+    // Funktion til at åbne/lukke undermenuer på mobil
+    dropdowns.forEach(dropdown => {
+        // Tjek om linket rent faktisk har en undermenu
+        if (dropdown.nextElementSibling && dropdown.nextElementSibling.classList.contains('dropdown-menu')) {
+            dropdown.addEventListener('click', function(event) {
+                // Kør kun denne logik på mobil-skærmstørrelser
+                if (window.innerWidth <= 992) { 
+                    // Forhindrer linket i at navigere, så vi kan åbne undermenuen
+                    event.preventDefault(); 
+                    
+                    // Luk andre åbne undermenuer for en renere brugeroplevelse
+                    const currentDropdown = this.parentElement;
+                    if (!currentDropdown.classList.contains('open')) {
+                        closeAllDropdowns();
+                    }
+                    
+                    // Åben/luk den klikkede undermenu
+                    currentDropdown.classList.toggle('open');
+                }
+            });
+        }
+    });
+    
+    // Funktion til at lukke alle åbne dropdowns
+    function closeAllDropdowns() {
+        document.querySelectorAll('.main-nav .dropdown.open').forEach(openDropdown => {
+            openDropdown.classList.remove('open');
+        });
+    }
+});
+

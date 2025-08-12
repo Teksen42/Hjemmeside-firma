@@ -77,39 +77,7 @@ p {
     margin-top: -5px;
 }
 
-/* NYT: Denne regel centrerer navigationen */
-.main-nav {
-    margin: 0 auto; /* Top/bund margin er 0, venstre/højre er auto */
-}
 
-/* Styling af menupunkter */
-.main-nav ul li a {
-  font-size: 1.1rem;   /* Gør skriften lidt større. Prøv f.eks. 1rem, 1.2rem eller 18px */
-  font-weight: 600;    /* Gør skriften tykkere (normal er 400, fed er 700) */
-  letter-spacing: 0.5px; /* Giver en smule mere luft mellem bogstaverne (valgfrit) */
-  padding: 10px 15px;  /* Giver mere klikbart område og luft omkring teksten */
-}
-.main-nav ul {
-  display: flex;
-  align-items: center;
-  gap: 25px; /* Samme afstand som før */
-}
-
-.main-nav li {
-  list-style: none;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: var(--dark-color);
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 10px 15px;
-}
-
-.main-nav a:hover {
-  color: var(--primary-color);
-}
 
 /* ===== KNAPPER ===== */
 .button {
@@ -121,15 +89,7 @@ p {
     display: inline-block;
 }
 
-.nav-button {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-}
 
-.nav-button:hover {
-    background-color: #9d06f5;
-    color: var(--light-color);
-}
 
 .primary-button {
     background: var(--primary-color);
@@ -552,37 +512,9 @@ p {
     margin-top: -5px;
 }
 
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
 
-.main-nav li {
-    margin-left: 25px;
-}
 
-.main-nav a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
 
-.main-nav a.active, .main-nav a:hover {
-    color: var(--primary-color);
-}
-
-#mobile-menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--dark-color);
-    cursor: pointer;
-}
 
 /* ===== KNAPPER ===== */
 .button {
@@ -594,15 +526,6 @@ p {
     display: inline-block;
 }
 
-.nav-button {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-}
-
-.nav-button:hover {
-    background-color: #bb07f1;
-    color: var(--light-color) !important;
-}
 
 /* ===== FOOTER ===== */
 .main-footer {
@@ -1132,53 +1055,7 @@ body {
     height: auto;
 }
 
-/* Gør det muligt at positionere dropdown-menuen korrekt i forhold til sit menupunkt */
-.main-nav .dropdown {
-    position: relative;
-}
 
-/* Skjuler dropdown-menuen som standard på alle skærme */
-.main-nav .dropdown-menu {
-    display: none;
-    position: absolute; /* Placerer menuen frit, men i forhold til .dropdown */
-    top: 100%;       /* Starter lige under hovedmenupunktet */
-    left: 0;
-    background-color: white;
-    min-width: 220px; /* Giver den en god bredde */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Flot skygge */
-    border-radius: 8px;
-    padding: 10px 0;
-    margin-top: 5px; /* Lille mellemrum for et pænere look */
-    z-index: 1100;   /* Sikrer den ligger oven på andet indhold */
-    list-style: none; /* Fjerner prikker fra listen */
-}
-
-
-/* VIGTIGT: Viser KUN dropdown-menuen, når du holder musen 
-  over forældre-elementet (.dropdown).
-*/
-@media (min-width: 769px) {
-    .main-nav .dropdown:hover > .dropdown-menu {
-        display: block;
-    }
-}
-
-/* Styling af links i dropdown-menuen */
-.main-nav .dropdown-menu li a {
-    padding: 12px 20px;
-    font-size: 0.95rem; /* Lidt mindre skrift end hovedmenuen */
-    font-weight: 400;
-    color: #333;
-    display: block; /* Sørger for at hele området er klikbart */
-    text-align: left;
-    white-space: nowrap; /* Forhindrer tekst i at knække over */
-}
-
-/* Hover-effekt inde i selve dropdown-menuen */
-.main-nav .dropdown-menu li a:hover {
-    background-color: #f5f5f5;
-    color: var(--primary-color);
-}
 /* Valgfri: Styling af den lille pil */
 .dropdown-icon {
     font-size: 0.7em;
@@ -1186,9 +1063,6 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.main-nav .dropdown:hover .dropdown-icon {
-    transform: rotate(180deg);
-}
 
 /* ========================================================= */
 /* ===== PROFESSIONEL & ROBUST MOBIL-NAVIGATION (FIXED) ===== */
@@ -1265,17 +1139,7 @@ body {
     .form-row { flex-direction: column; gap: 0; }
     .header-container { width: 90%; /* Giver lidt mere luft i siderne */ }
 
-    /* --- Burger-knap Styling --- */
-    #mobile-menu-toggle {
-        display: block; /* Viser knappen */
-        z-index: 1100;  /* Sikrer at den altid er øverst */
-        position: relative;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
-        background: none;
-        border: none;
-    }
+    
 
     .icon-bar {
         display: block;
@@ -1292,92 +1156,8 @@ body {
     .icon-bar:nth-child(3) { bottom: 0; }
 
     /* --- Mobilmenuen (den der folder ud) --- */
-    .main-nav {
-        position: fixed; /* Låser menuen til skærmen */
-        top: 0;
-        left: -100%; /* Starter skjult uden for skærmen */
-        width: 100%;
-        height: 100vh; /* Fyld hele højden */
-        background-color: white;
-        transition: left 0.3s ease-in-out; /* Blød animation */
-        z-index: 1050;
-        padding-top: 80px;
-    }
-
-    .main-nav.is-active {
-        left: 0; /* Kører menuen ind fra venstre */
-    }
-
-    /* Roterer burger-knap til et 'X' når menuen er aktiv */
-    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(2) { opacity: 0; }
-    .main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
-
-    .main-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
     
-    .main-nav li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .main-nav a {
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 10px;
-        display: flex; /* Gør det nemt at justere indhold */
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Pilen ved siden af dropdowns */
-    .dropdown-icon {
-        font-size: 1rem;
-        margin-left: 10px;
-        transition: transform 0.3s ease;
-    }
-
-    /* Skjul under-menu som standard */
-.dropdown-menu {
-    display: none;
-    position: static; /* Nulstiller desktop-positionering */
-    background: #f9f9f9;
-    box-shadow: none;
-    padding: 10px 0;
-    margin-top: 10px;
-}
-    .dropdown-menu li a {
-        font-size: 1.1rem;
-        font-weight: 400;
-    }
-
-    /* Vis under-menu når forælderen er åben */
-    .dropdown.is-open > .dropdown-menu {
-        display: block;
-    }
-
-.dropdown.is-open .dropdown-icon {
-    transform: rotate(180deg);
-}
-
-    /* Viser menuen når den er aktiv */
-    .main-nav.is-active > ul {
-        display: flex; 
-    }
     
-    .main-nav li {
-        margin: 15px 0;
-        text-align: center;
-    }
-    
-    #mobile-menu-toggle {
-        display: block; /* Viser hamburger-ikonet */
-    }
-
     /* -- Hero Sektion -- */
     #hero h1 {
         font-size: 2.5em;
@@ -1449,167 +1229,7 @@ body {
     }
 }
 
-/* ======================================================= */
-/* ===== MOBIL-NAVIGATION OG BURGER-IKON STYLING      ===== */
-/* ======================================================= */
 
-/* Standard styling for burger-knappen */
-#mobile-menu-toggle {
-    display: none; /* Skjult som standard på desktop */
-    width: 30px;
-    height: 25px;
-    position: relative;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1100; /* Sikrer at den er over andre elementer */
-}
-
-/* De tre streger i ikonet */
-#mobile-menu-toggle .icon-bar {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--dark-color);
-    position: absolute;
-    left: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-#mobile-menu-toggle .icon-bar:nth-child(1) {
-    top: 0;
-}
-
-#mobile-menu-toggle .icon-bar:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#mobile-menu-toggle .icon-bar:nth-child(3) {
-    bottom: 0;
-}
-
-/* "Lukke" animation (X), når menuen er åben */
-.main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
-
-.main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(2) {
-    opacity: 0;
-}
-
-.main-nav.is-active + #mobile-menu-toggle .icon-bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-}
-
-
-/* --- Media Query til mobil (f.eks. under 768px) --- */
-@media (max-width: 768px) {
-    /* Vis burger-ikonet */
-    #mobile-menu-toggle {
-        display: block;
-    }
-
-    /* Skjul desktop navigationen */
-    .main-nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: fixed; /* Lægger sig over alt andet indhold */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh; /* Fyld hele skærmens højde */
-        background-color: rgba(255, 255, 255, 0.98); /* Let gennemsigtig hvid */
-        backdrop-filter: blur(5px); /* Sløret effekt på baggrunden */
-        padding: 0;
-        margin: 0;
-        gap: 20px;
-        z-index: 1050; /* Sørger for at den er under burger-ikonet, men over resten */
-    }
-
-    /* Viser menuen når den har 'is-active' klassen */
-    .main-nav.is-active ul {
-        display: flex;
-    }
-
-    /* Styling af menupunkter i mobilmenuen */
-    .main-nav.is-active ul li a {
-        font-size: 1.8rem; /* Større tekst på mobil */
-        font-weight: 700;
-        color: var(--dark-color);
-    }
-    
-    /* Skjuler dropdown-menuerne på mobil for simplicitet. 
-       Du kan style dem senere, hvis de skal bruges. */
-    .main-nav .dropdown-menu {
-        display: none !important; 
-    }
-    
-    .main-nav .dropdown-icon {
-        display: none;
-    }
-}
-
-@media (min-width: 769px) {
-    .main-nav .dropdown:hover > .dropdown-menu {
-        display: block; /* VIGTIGT for desktop-hover */
-    }
-}
-
-/* Grundlæggende styling for knappen (kan du tilpasse) */
-#mobile-menu-toggle {
-    display: none; /* Skjult som standard */
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#mobile-menu-toggle .icon-bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px 0;
-}
-
-/* Media Query: Gælder kun for skærme under f.eks. 768px */
-@media (max-width: 768px) {
-    /* Vis burger-knappen */
-    #mobile-menu-toggle {
-        display: block;
-    }
-
-    /* Skjul navigationen som udgangspunkt */
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%; /* Lige under headeren */
-        left: 0;
-        width: 100%;
-        background-color: white; /* Giv den en baggrund */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    /* Gør undermenuer synlige i mobil-layout */
-    .main-nav ul {
-        flex-direction: column; /* Sæt menupunkter under hinanden */
-    }
-
-    .main-nav .dropdown-menu {
-        position: static; /* Ophæv dropdown-effekt på mobil */
-        display: block; /* Sørg for at undermenuen er synlig */
-        border: none;
-        box-shadow: none;
-        background-color: #f9f9f9; /* Lidt anden farve for at adskille */
-    }
-
-    /* VIS menuen, når den har klassen 'menu-open' */
-    .main-nav.menu-open {
-        display: block;
-    }
-}
 /* ======================================================= */
 /* ===== TEAM-DESIGN m. JUSTERET AFSTAND (v7)        ===== */
 /* ======================================================= */
@@ -1730,3 +1350,294 @@ body {
     color: var(--primary-color);
     transform: scale(1.1);
 }
+
+/* --- Grundlæggende Header & Navigations-styling --- */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-image {
+    max-height: 50px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 20px;
+    position: relative; 
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 5px;
+    display: block;
+}
+
+/* ======================================================================== */
+/* == KERNEN I LØSNINGEN - DESKTOP DROPDOWN-LOGIK == */
+/* ======================================================================== */
+
+/* 1. Sørg for at alle undermenuer er skjult som standard med HØJ SPECIFICITET */
+.main-nav > ul > li > .dropdown-menu {
+    display: none !important; /* !important tvinger reglen igennem */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px;
+    z-index: 1001;
+}
+
+/* 2. Vis KUN den undermenu, der hører til det menupunkt, der hovers over */
+.main-nav > ul > li.dropdown:hover > .dropdown-menu {
+    display: block !important; /* !important tvinger reglen igennem */
+}
+
+/* Nulstil margin og padding for listeelementer i dropdown */
+.dropdown-menu li {
+    margin: 0;
+    padding: 0; 
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+}
+
+/* Styling af pil */
+.dropdown-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+
+/* ======================================================================== */
+/* == MOBIL & TABLET RESPONSIVITET (RØR IKKE VED DETTE) == */
+/* ======================================================================== */
+
+#mobile-menu-toggle { display: none; }
+
+@media (max-width: 992px) {
+    #mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    #mobile-menu-toggle .icon-bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .main-nav { display: none; }
+    
+    .main-nav.nav-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+    }
+
+    .main-nav ul { flex-direction: column; }
+    .main-nav li { margin: 0; width: 100%; border-bottom: 1px solid #ddd; }
+    .main-nav a { padding: 15px 20px; }
+    
+    /* VIGTIGT: OVERSKRIV DESKTOP-REGLER FOR MOBIL */
+    .main-nav > ul > li > .dropdown-menu {
+        display: none !important; /* Skal stadig være skjult på mobil som standard */
+        position: static; /* Ikke absolut på mobil */
+        box-shadow: none;
+        border-top: 1px solid #ddd;
+        min-width: 100%;
+    }
+    
+    /* VISER MOBIL-UNDERMENU NÅR DEN HAR .open KLASSEN (VIA JAVASCRIPT) */
+    .dropdown.open > .dropdown-menu {
+        display: block !important;
+    }
+
+    .dropdown > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* ===== GRUNDLÆGGENDE STYLING & SKRIFTTYPE ===== */
+body {
+    font-family: 'Poppins', sans-serif; /* Anvend den nye skrifttype */
+    margin: 0;
+    background-color: #f9f9f9; /* Giver en let grå baggrund til siden */
+}
+
+/* ===== HEADER CONTAINER ===== */
+.main-header {
+    background-color: #fff;
+    /* Diskret skygge for at løfte headeren fra siden */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    padding: 1rem 0; /* Giver luft over og under indholdet */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Skubber logo og nav til hver sin side */
+    align-items: center; /* Centrerer elementerne vertikalt */
+    max-width: 1200px; /* Sætter en maks bredde for indholdet */
+    margin: 0 auto; /* Centrerer containeren */
+    padding: 0 2rem; /* Giver lidt plads i siderne */
+}
+
+.logo-image {
+    max-height: 50px; /* Juster efter behov */
+    display: block;
+}
+
+
+/* ===== DESKTOP NAVIGATION STYLING ===== */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Moderne måde at skabe afstand mellem menupunkter */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem; /* 16px */
+    font-weight: 500; /* Lidt tykkere end normal */
+    padding: 0.5rem 1rem;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #7811ee; /* En lilla-farve, der kunne matche dit logo */
+}
+
+/* ===== DROPDOWN PIL (LAVET MED REN CSS) ===== */
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Selve pilen */
+.dropdown > a::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid #888;
+    border-right: 2px solid #888;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(225deg); /* Roterer pilen opad ved hover */
+    border-color: #7811ee; /* Ændrer farve på pilen ved hover */
+}
+
+
+/* ===== DROPDOWN MENU STYLING ===== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Skjult som standard */
+    position: absolute;
+    top: 110%; /* Lidt ekstra plads fra toppen */
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    border-radius: 8px; /* Moderne afrundede hjørner */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0.5rem 0; /* Luft i toppen og bunden af menuen */
+    margin: 0;
+    opacity: 0; /* Start usynlig for animation */
+    transform: translateY(10px); /* Start lidt nede for animation */
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Viser menuen ved hover på .dropdown elementet */
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Animation for dropdown */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    font-weight: 400;
+}
+
+
+/* ===== MOBIL NAVIGATION (Stort set uændret funktionalitet) ===== */
+#mobile-menu-toggle { display: none; } /* Skjult på desktop */
+
+@media (max-width: 992px) {
+    .main-nav { display: none; }
+    #mobile-menu-toggle { display: block; /* Vist på mobil */ }
+
+    /* Her kan du indsætte resten af din mobil-specifikke CSS, hvis nødvendigt.
+       Den kode, vi lavede tidligere, vil generelt stadig virke, men det visuelle
+       vil nu følge de nye regler ovenfor. */
+}
+
