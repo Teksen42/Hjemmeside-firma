@@ -141,24 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Vent på at hele HTML-dokumentet er indlæst
-document.addEventListener('DOMContentLoaded', function () {
-
-    // Find knappen og menuen via deres ID og klasse
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-
-    // Tjek om både knap og menu findes på siden
-    if (menuToggle && mainNav) {
-        // Lyt efter et klik på knappen
-        menuToggle.addEventListener('click', function () {
-            // Tilføj eller fjern klassen 'menu-open' på nav-elementet
-            mainNav.classList.toggle('menu-open');
-        });
-    }
-
-});
-
+    
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('mobile-menu-toggle');
